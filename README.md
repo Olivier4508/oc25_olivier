@@ -5,6 +5,6 @@ Je suis un étudiant au gymnase du Bugnon [mdlgb.ch], et j'ai choisi cet OC car 
 
 ```python
 def bonjour(nom):
-  return "Bonjour", + int(nom)
+  return "Bonjour", + str(nom)
 
 print(bonjour(Olivier))
