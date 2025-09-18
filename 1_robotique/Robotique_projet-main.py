@@ -1,3 +1,12 @@
+"""
+Projet Robotique
+
+Nom : Olivier et Catia
+Classe : 3M2
+Date : 18.09.25
+
+"""
+
 from microbit import *
 from machine import time_pulse_us
 import music
