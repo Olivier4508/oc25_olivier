@@ -1,12 +1,3 @@
-"""
-Projet Robotique
-
-Nom : Olivier et Catia
-Classe : 3M2
-Date : 18.09.25
-
-"""
-
 from microbit import *
 from machine import time_pulse_us
 import music
@@ -42,10 +33,14 @@ while True:
     robot.goToPosition(2, 180)
     if (distance*100) <= 14:
         robot.move(60, -60, 1175) # tourner 180 degrés
-        robot.move(-50, -50, 400)
+        robot.move(-50, -50, 600)
         robot.goToPosition(2, 10) # ferme la pince
-        break
     else : follow()
+    
 
-while True:
-    follow()
+
+
+
+
+
+        
