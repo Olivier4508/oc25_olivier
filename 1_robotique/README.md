@@ -34,3 +34,10 @@ Vous êtes complètement libre de faire quelque chose avec le robot
 ## Documentation
 
 Toute la documentation se trouve dans un fichier README.md.
+
+- 3 niveau de titres
+- liste avec puces et numéroté
+- des examples de code
+- des formules mathématiques
+- des images
+- des hyperliens
