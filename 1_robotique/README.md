@@ -12,7 +12,7 @@ def bonjour(nom):
 print(bonjour(Olivier))
 ```
 
-#Projet Robotique
+# Projet Robotique
 Ce projet possède une parite obligatoire, mais aussi une partie libre.
 
 ## Partie obligatoire
