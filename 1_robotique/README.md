@@ -17,15 +17,17 @@ Ce projet possède une parite obligatoire, mais aussi une partie libre.
 
 ## Partie obligatoire
 
-Dans ce mini-projet le robot :
-- commence le parcours à une position A
-- va suive une ligne
-- va détecter un objet avec le capteur ultrason (position B variable)
-- va tourner de 180 degrès
-- va attraper l'objet avec la pince
-- va ramener l'onjet à la position A
+Dans ce mini-projet le robot doit :
+- Commencer le parcours à une position A
+- Suivre une ligne
+- Être capable de détecter un objet avec le capteur ultrason (position B variable)
+- Pouvoir tourner par la suite de 180 degrès
+- Être capable d'attraper l'objet avec la pince
+- Aller ramener l'objet à la position A
 
-Voici le code de cette partie du projet :
+### Programmation
+
+Voici le code de cette partie du projet, qui comporte tous les précédents élements cités :
 
 ```python
 from microbit import *
@@ -71,15 +73,48 @@ while True:
 
 
 ## Partie libre
+Cette partie du projet est divisée en plusieurs programmes.
 
-Vous êtes complètement libre de faire quelque chose avec le robot
-- une danse
-- n light-show
-- parler, faire de la musique
-- être télécommandé
+Programme (0..n)
+1. Le robot est télécommandé
+2. Une musique se joue
+3. ...
+
+### Programmation
+Voici le code des différents programmes pour cete partie du projet.
+
+```python
+while True:
+    # le bouton A incrémente les programmes (0..n)**
+    if button_a.was_pressed():
+        robot.move(0, 0)
+        prog = (prog + 1) % 10
+        display.show(prog)
+        music.pitch(440, 20)
+
+    if prog == 0:
+        msg = radio.receive()
+        if msg:
+            display.show(msg)
+            if msg == '0':
+                robot.move(0, 0)
+            elif msg == 'u':
+                robot.move(-80, -80)
+            elif msg == 'r':
+                robot.move(80, -80)
+            elif msg == 'l':
+                robot.move(-80, 80)
+            elif msg == 'd':
+                robot.move(80, 80)
+            elif msg == '2':
+                robot.goToPosition(1, 20)
+            elif msg == '1':
+                robot.goToPosition(1, 160)
+
+
+```
 
 ## Documentation
-
 Toute la documentation se trouve dans un fichier README.md.
 
 - 3 niveau de titres
