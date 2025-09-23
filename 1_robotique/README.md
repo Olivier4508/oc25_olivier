@@ -84,6 +84,25 @@ Programme (0..n)
 Voici le code des différents programmes pour cete partie du projet.
 
 ```python
+from microbit import *
+import KitronikMOVEMotor
+import music
+import radio
+
+
+robot = KitronikMOVEMotor.MOVEMotor()
+robot.move(0, 0)
+robot.goToPosition(1, 90)
+
+# le group doit correspondre au kit (1..15)
+g = 6
+display.scroll(g)
+radio.on()
+radio.config(group=g)
+
+prog = 0 # programme actuel (0..n)**
+display.show(prog)
+
 while True:
     # le bouton A incrémente les programmes (0..n)**
     if button_a.was_pressed():
