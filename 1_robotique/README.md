@@ -135,7 +135,7 @@ while True:
 
 ## Musique
 
-Musique Lava Chicken [https://musescore.com/user/35262893/scores/24663382]
+Musique [Lava Chicken](https://musescore.com/user/35262893/scores/24663382)
 
 ```python
 music.set_tempo(bpm=79)
