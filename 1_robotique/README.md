@@ -12,6 +12,8 @@ def bonjour(nom):
 print(bonjour(Olivier))
 ```
 
+#Projet Robotique
+Ce projet possède une parite obligatoire, mais aussi une partie libre.
 
 ## Partie obligatoire
 
@@ -22,6 +24,8 @@ Dans ce mini-projet le robot :
 - va tourner de 180 degrès
 - va attraper l'objet avec la pince
 - va ramener l'onjet à la position A
+
+Voici le code de cette partie du projet :
 
 ```python
 from microbit import *
