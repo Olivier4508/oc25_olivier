@@ -133,6 +133,26 @@ while True:
 
 ```
 
+## Musique
+
+Musique Lava Chicken [https://musescore.com/user/35262893/scores/24663382]
+
+```python
+music.set_tempo(bpm=79)
+lavachicken = ('d4:1', 'd4:1', 'd4:1', 'f:1', 'd4:3', 'r:1',
+               'd4:1', 'd4:1', 'd4:1', 'f:1', 'd4:3', 'r:3',
+               'g4:3', 'g4:1', 'f4:1', 'g4:1', 'f4:1', 'd4:1', 'c4:1',
+               'd4:1', 'd4:1', 'c4:1', 'd4:3', 'r:2', 'g4:3',
+               'g4:1', 'f4:1', 'g4:1', 'f4:1', 'd4:1', 'c4:1', 'd4:1', 'd4:1',
+               'f4:1', 'd4:3', 'r:2', 'g4:3', 'g4:1', 'f4:1', 'g4:1', 'f4:1',
+               'd4:1', 'c4:1', 'd4:1', 'd4:1', 'c4:1', 'f4:3', 'r:2',
+               'g4:3', 'g4:1', 'f4:1', 'g4:1', 'f4:1', 'd4:1', 'c4:1',
+               'd5:1', 'd5:1', 'd5:1', 'd5:6')
+
+music.play(lavachicken)
+
+```
+
 ## Documentation
 Toute la documentation se trouve dans un fichier README.md.
 
