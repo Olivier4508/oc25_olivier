@@ -73,7 +73,7 @@ while True:
 
 ```
 
-![](/images/robot.png)
+![](/robot.png)
 
 ## Partie libre
 Cette partie du projet est divisée en plusieurs programmes.
