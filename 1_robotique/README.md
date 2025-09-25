@@ -27,7 +27,7 @@ Dans ce mini-projet le robot doit :
 
 ### Programmation
 
-## Programme 1
+#### Programme 1
 
 Voici le code de cette partie du projet, qui comporte tous les précédents élements cités :
 
@@ -83,9 +83,9 @@ Programme (0..n)
 2. Une musique se joue
 3. ...
 
-### Programmation
 
-## Programme 0
+### Programmation
+#### Programme 0
 
 Voici le code des différents programmes pour cete partie du projet.
 
@@ -139,7 +139,7 @@ while True:
 
 
 ```
-## Musique (Programme 2)
+#### Musique (Programme 2)
 
 Musique [Lava Chicken](https://musescore.com/user/35262893/scores/24663382)
 
