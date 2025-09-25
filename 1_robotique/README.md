@@ -50,12 +50,12 @@ echo.read_digital()
 
 robot.goToPosition(1, 160)
 
-def follow(): # suivre ligne
+def follow(v): # suivre ligne
     left = pin1.read_analog()
     right = pin2.read_analog()
     d = (left - right)
     d = d // 10
-    robot.move(5 - d, 5 + d)
+    robot.move(v - d, v + d)
 
 while True:
     trigger.write_digital(1)
@@ -67,7 +67,7 @@ while True:
         robot.move(60, -60, 1175) # tourner 180 degrés
         robot.move(-50, -50, 600)
         robot.goToPosition(2, 10) # ferme la pince
-    else : follow()
+    else : follow(20)
 
 ```
 
