@@ -27,8 +27,6 @@ Dans ce mini-projet le robot doit :
 
 ### Programmation
 
-#### Programme 1
-
 Voici le code de cette partie du projet, qui comporte tous les précédents élements cités :
 
 ```python
@@ -66,7 +64,7 @@ while True:
     # display.scroll(str(round(distance*100)), 50)
     robot.goToPosition(2, 180)
     if (distance*100) <= 14:
-        robot.move(60, -60, 1275) # tourner 180 degrés
+        robot.move(60, -60, 1175) # tourner 180 degrés
         robot.move(-50, -50, 600)
         robot.goToPosition(2, 10) # ferme la pince
     else : follow(20)
@@ -74,6 +72,7 @@ while True:
 ```
 
 ![](robot.png)
+
 
 ## Partie libre
 Cette partie du projet est divisée en plusieurs programmes.
@@ -83,10 +82,7 @@ Programme (0..n)
 2. Une musique se joue
 3. ...
 
-
 ### Programmation
-#### Programme 0
-
 Voici le code des différents programmes pour cete partie du projet.
 
 ```python
@@ -137,9 +133,9 @@ while True:
                 robot.goToPosition(1, 160)
 
 
-
 ```
-#### Musique (Programme 2)
+
+## Musique
 
 Musique [Lava Chicken](https://musescore.com/user/35262893/scores/24663382)
 
