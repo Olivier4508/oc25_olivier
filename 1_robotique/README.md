@@ -80,7 +80,6 @@ Cette partie du projet est divisée en plusieurs programmes.
 Programme (0..n)
 1. Le robot est télécommandé
 2. Une musique se joue
-3. ...
 
 ### Programmation
 Voici le code des différents programmes pour cete partie du projet.
