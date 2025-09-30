@@ -64,7 +64,6 @@ while True:
     trigger.write_digital(1)
     trigger.write_digital(0)
     distance = time_pulse_us(echo, 1)/2e6*340
-    # display.scroll(str(round(distance*100)), 50)
     robot.goToPosition(2, 180)
     if (distance*100) <= 14:
         robot.move(60, -60, 1175) # tourner 180 degrés
@@ -81,6 +80,11 @@ while True:
 Cette partie du projet est divisée en plusieurs programmes.
 
 Programme (0..n)
+<<<<<<< HEAD
+=======
+1. Le robot est télécommandé
+2. Une musique se joue
+>>>>>>> 1e9ef18b4d217e042202d9655bd462f91e56d2fc
 
 1. Le robot est télécommandé
 
