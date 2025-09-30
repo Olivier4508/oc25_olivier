@@ -1,6 +1,7 @@
 # oc25_dubois
 
 ## About me
+
 Je suis un étudiant au gymnase du Bugnon [mdlgb.ch], et j'ai choisi cet OC car j'aime bien la programmation et je pense faire ca comme études plus tard.
 
 Ce code permet de dire bonjour à quelqu'un.
@@ -12,12 +13,14 @@ def bonjour(nom):
 print(bonjour(Olivier))
 ```
 
-# Projet Robotique
+## Projet Robotique
+
 Ce projet possède une parite obligatoire, mais aussi une partie libre.
 
 ## Partie obligatoire
 
 Dans ce mini-projet le robot doit :
+
 - Commencer le parcours à une position A
 - Suivre une ligne
 - Être capable de détecter un objet avec le capteur ultrason (position B variable)
@@ -71,18 +74,20 @@ while True:
 
 ```
 
-![](robot.png)
-
+!['Photo de notre robot'](robot.png)
 
 ## Partie libre
+
 Cette partie du projet est divisée en plusieurs programmes.
 
 Programme (0..n)
-1. Le robot est télécommandé
-2. Une musique se joue
-3. ...
 
-### Programmation
+1. Le robot est télécommandé
+
+2. Une musique se joue
+
+## Program global
+
 Voici le code des différents programmes pour cete partie du projet.
 
 ```python
@@ -156,6 +161,7 @@ music.play(lavachicken)
 ```
 
 ## Documentation
+
 Toute la documentation se trouve dans un fichier README.md.
 
 - 3 niveau de titres
