@@ -8,7 +8,7 @@ Ce code permet de dire bonjour à quelqu'un.
 
 ```python
 def bonjour(nom):
-  return "Bonjour", + str(nom)
+  return "Bonjour", + str(nom) 
 
 print(bonjour(Olivier))
 ```
