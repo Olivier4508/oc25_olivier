@@ -110,7 +110,6 @@ while True:
             trigger.write_digital(1)
             trigger.write_digital(0)
             distance = time_pulse_us(echo, 1)/2e6*340
-            # display.scroll(str(round(distance*100)), 50)
             robot.goToPosition(2, 180)
             if (distance*100) <= 14:
                 robot.move(60, -60, 1275) # tourner 180 degrés
@@ -208,14 +207,3 @@ lavachicken = ('d4:1', 'd4:1', 'd4:1', 'f:1', 'd4:3', 'r:1',
 music.play(lavachicken)
 
 ```
-
-## Documentation
-
-Toute la documentation se trouve dans un fichier README.md.
-
-- 3 niveau de titres
-- liste avec puces et numéroté
-- des examples de code
-- des formules mathématiques
-- des images
-- des hyperliens
