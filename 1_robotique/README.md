@@ -7,7 +7,7 @@ Je suis un étudiant au gymnase du Bugnon [mdlgb.ch], et j'ai choisi cet OC car 
 Ce code permet de dire bonjour à quelqu'un.
 
 ```python
-def bonjour(nom):
+def bonjour(nom): 
   return "Bonjour", + str(nom) 
 
 print(bonjour(Olivier))
