@@ -35,7 +35,7 @@ Cette partie du projet est divisée en deux programmes.
 1. Le robot est télécommandé
 2. Une musique se joue
 
-## Program global (Prog 0, 1 e 2)
+## Program global (Prog 0, 1 et 2)
 
 Voici le code des différents programmes pour ce projet robotique.
 
