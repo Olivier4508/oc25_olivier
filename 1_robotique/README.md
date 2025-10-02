@@ -18,7 +18,7 @@ print(bonjour(Olivier))
 Ce projet possède une parite obligatoire, mais aussi une partie libre.
 
 ## Partie obligatoire (Prog 1)
-
+ 
 Dans ce mini-projet le robot doit :
 
 - Commencer le parcours à une position A
