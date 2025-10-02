@@ -30,7 +30,7 @@ Dans ce mini-projet le robot doit :
 
 ## Partie libre (Prog 0 et 2)
 
-Cette partie du projet est divisée en plusieurs programmes.
+Cette partie du projet est divisée en deux programmes.
 
 1. Le robot est télécommandé
 2. Une musique se joue
