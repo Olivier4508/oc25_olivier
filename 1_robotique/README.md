@@ -13,11 +13,11 @@ def bonjour(nom):
 print(bonjour(Olivier))
 ```
 
-## Projet Robotique
+# Projet Robotique
 
 Ce projet possède une parite obligatoire, mais aussi une partie libre.
 
-## Partie obligatoire
+## Partie obligatoire (Prog 1)
 
 Dans ce mini-projet le robot doit :
 
@@ -28,18 +28,16 @@ Dans ce mini-projet le robot doit :
 - Être capable d'attraper l'objet avec la pince
 - Aller ramener l'objet à la position A
 
-## Partie libre
+## Partie libre (Prog 0 et 2)
 
 Cette partie du projet est divisée en plusieurs programmes.
-
-Programme (0..n)
 
 1. Le robot est télécommandé
 2. Une musique se joue
 
-## Program global
+## Program global (Prog 0, 1 e 2)
 
-Voici le code des différents programmes pour cete partie du projet.
+Voici le code des différents programmes pour ce projet robotique.
 
 ```python
 from microbit import *
