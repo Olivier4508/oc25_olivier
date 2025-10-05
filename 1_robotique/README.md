@@ -45,6 +45,7 @@ import KitronikMOVEMotor
 from machine import time_pulse_us 
 import music
 import radio
+import time
 
 robot = KitronikMOVEMotor.MOVEMotor()
 robot.move(0, 0)
@@ -70,7 +71,7 @@ trigger = pin13
 echo = pin14
 
 while True:
-    # le bouton A incrémente les programmes (0..n)**
+    # le bouton A incrémente les programmes (0..n)**
     if button_a.was_pressed():
         robot.move(0, 0)
         prog = (prog + 1) % 10
@@ -97,6 +98,7 @@ while True:
                 robot.goToPosition(1, 160)
 
     if prog == 1:
+        init_time = running_time() # mesure le temps depuis que le microbit est allumé / temps 0
         robot.goToPosition(1, 160)
         while True:
             if button_a.was_pressed():
@@ -105,19 +107,43 @@ while True:
                 display.show(prog)
                 music.pitch(440, 20)
                 break
+            elif prog == 2:
+                robot.move(0, 0)
+                display.show(prog)
+                music.pitch(440, 20)
+                break
             trigger.write_digital(1)
             trigger.write_digital(0)
             distance = time_pulse_us(echo, 1)/2e6*340
-            robot.goToPosition(2, 180)
             if (distance*100) <= 14:
-                robot.move(60, -60, 1275) # tourner 180 degrés
-                robot.move(-60, -60, 600)
+                robot.move(60, -60, 1325) # tourner 180 degrés
+                robot.move(-60, -60, 1000)
                 robot.goToPosition(1, 20) # ferme la pince
+                time_elapsed = running_time() - init_time # temps depuis que le prog 1 à commencé / temps pour aller à l'objet
+                while True:
+                    new_time = running_time() - time_elapsed - init_time # temps depuis qu'on a mesuré time_elapsed (chrono qui commence après qu'il a ramassé l'objet)
+                    if time_elapsed <= new_time: # si le temps de puis qu'on a pris l'objet = temps pour aller à l'objet
+                        robot.move(0, 0) # arrête le robot
+                        robot.goToPosition(1, 160) # relache l'objet
+                        while True:
+                            if button_a.was_pressed(): # pour avancer au prochain programme (musique)
+                                prog = 2
+                                break
+                        break
+                    else:
+                        follow(10)
             else : follow(20)
 
     if prog == 2:
-        music.set_tempo(bpm=79)
-        lavachicken = ('d4:1', 'd4:1', 'd4:1', 'f:1', 'd4:3', 'r:1',
+        while True:
+            if button_a.was_pressed():
+                prog = (prog + 1) % 10
+                display.show(prog)
+                music.pitch(440, 20)
+                break
+            elif button_b.was_pressed():
+                music.set_tempo(bpm=79)
+                lavachicken = ('d4:1', 'd4:1', 'd4:1', 'f:1', 'd4:3', 'r:1',
                'd4:1', 'd4:1', 'd4:1', 'f:1', 'd4:3', 'r:3',
                'g4:3', 'g4:1', 'f4:1', 'g4:1', 'f4:1', 'd4:1', 'c4:1',
                'd4:1', 'd4:1', 'c4:1', 'd4:3', 'r:2', 'g4:3',
@@ -126,8 +152,7 @@ while True:
                'd4:1', 'c4:1', 'd4:1', 'd4:1', 'c4:1', 'f4:3', 'r:2',
                'g4:3', 'g4:1', 'f4:1', 'g4:1', 'f4:1', 'd4:1', 'c4:1',
                'd5:1', 'd5:1', 'd5:1', 'd5:6')
-        music.play(lavachicken)
-
+                music.play(lavachicken)
 
 ```
 
@@ -161,7 +186,8 @@ Voici le code qui permet au robot d'être télécommandé :
 Voici le code qui permet au robot de suivre une ligne, attraper un objet et le ramener :
 
 ```python
-    if prog == 1:
+if prog == 1:
+        init_time = running_time() # mesure le temps depuis que le microbit est allumé / temps 0
         robot.goToPosition(1, 160)
         while True:
             if button_a.was_pressed():
@@ -170,16 +196,33 @@ Voici le code qui permet au robot de suivre une ligne, attraper un objet et le r
                 display.show(prog)
                 music.pitch(440, 20)
                 break
+            elif prog == 2:
+                robot.move(0, 0)
+                display.show(prog)
+                music.pitch(440, 20)
+                break
             trigger.write_digital(1)
             trigger.write_digital(0)
             distance = time_pulse_us(echo, 1)/2e6*340
-            # display.scroll(str(round(distance*100)), 50)
-            robot.goToPosition(2, 180)
             if (distance*100) <= 14:
-                robot.move(60, -60, 1275) # tourner 180 degrés
-                robot.move(-60, -60, 600)
+                robot.move(60, -60, 1325) # tourner 180 degrés
+                robot.move(-60, -60, 1000)
                 robot.goToPosition(1, 20) # ferme la pince
+                time_elapsed = running_time() - init_time # temps depuis que le prog 1 à commencé / temps pour aller à l'objet
+                while True:
+                    new_time = running_time() - time_elapsed - init_time # temps depuis qu'on a mesuré time_elapsed (chrono qui commence après qu'il a ramassé l'objet)
+                    if time_elapsed <= new_time: # si le temps de puis qu'on a pris l'objet = temps pour aller à l'objet
+                        robot.move(0, 0) # arrête le robot
+                        robot.goToPosition(1, 160) # relache l'objet
+                        while True:
+                            if button_a.was_pressed(): # pour avancer au prochain programme (musique)
+                                prog = 2
+                                break
+                        break
+                    else:
+                        follow(10)
             else : follow(20)
+
 ```
 
 !['Photo de notre robot'](robot.png)
@@ -191,8 +234,16 @@ Voici le code qui permet au robot de jouer une musique :
 Musique [Lava Chicken](https://musescore.com/user/35262893/scores/24663382)
 
 ```python
-music.set_tempo(bpm=79)
-lavachicken = ('d4:1', 'd4:1', 'd4:1', 'f:1', 'd4:3', 'r:1',
+    if prog == 2:
+        while True:
+            if button_a.was_pressed():
+                prog = (prog + 1) % 10
+                display.show(prog)
+                music.pitch(440, 20)
+                break
+            elif button_b.was_pressed():
+                music.set_tempo(bpm=79)
+                lavachicken = ('d4:1', 'd4:1', 'd4:1', 'f:1', 'd4:3', 'r:1',
                'd4:1', 'd4:1', 'd4:1', 'f:1', 'd4:3', 'r:3',
                'g4:3', 'g4:1', 'f4:1', 'g4:1', 'f4:1', 'd4:1', 'c4:1',
                'd4:1', 'd4:1', 'c4:1', 'd4:3', 'r:2', 'g4:3',
@@ -201,7 +252,6 @@ lavachicken = ('d4:1', 'd4:1', 'd4:1', 'f:1', 'd4:3', 'r:1',
                'd4:1', 'c4:1', 'd4:1', 'd4:1', 'c4:1', 'f4:3', 'r:2',
                'g4:3', 'g4:1', 'f4:1', 'g4:1', 'f4:1', 'd4:1', 'c4:1',
                'd5:1', 'd5:1', 'd5:1', 'd5:6')
-
-music.play(lavachicken)
+                music.play(lavachicken)
 
 ```
