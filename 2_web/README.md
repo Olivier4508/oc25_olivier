@@ -1,12 +1,5 @@
 # oc25_dubois
 
-## About me
-Je suis un étudiant au gymnase du Bugnon [mdlgb.ch], et j'ai choisi cet OC car j'aime bien la programmation et je pense faire ca comme études plus tard.
+## Cahier des charges
 
-Ce code permet de dire bonjour à quelqu'un.
-
-```python
-def bonjour(nom):
-  return "Bonjour", + str(nom)
-
-print(bonjour(Olivier))
+Mon site web sera un site de photograpie, où seront affichés mes plus beaux clichés. Chacune d'entre elles auront une légende et certaines seront animées, par exemple avec un effet panoramique. Etant amateur photographe, je m'y connais assez bien au sujet. Il sera organisé tout d'abord par thèmes (Nature, Ville, etc) et ensuite les photos individuelles seront organisés par ordre chronologique. Il aura un style assez moderne et minimaliste, sans paraître trop fade.
