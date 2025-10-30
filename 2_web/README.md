@@ -8,4 +8,4 @@ Mon site web sera un site de photograpie, où seront affichés mes plus beaux cl
 
 ## Maquette
 
-!['Photo de la maquette'](maquette.jpeg)
+!['Photo de la maquette'](/2_web/images/maquette.jpeg)

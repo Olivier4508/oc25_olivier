@@ -1,0 +1,80 @@
+/* Added a flex container for vertical alignment */
+.row1 {
+    display: flex;
+}
+
+.rectangle1nature, .rectangle2animalier {
+    padding: 5px;
+}
+
+.rectangle1nature {
+    position: relative;
+    top: -30%;
+    left: 25%; /* Align horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+    text-align: center;
+}
+
+.rectangle1naturetext {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.rectangle2animalier {
+    position: relative;
+    top: -30%; /* Match the vertical alignment */
+    left: 30%; /* Align horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+    text-align: center;
+}
+
+.rectangle2animaliertext {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.row2 {
+    display: flex;
+}
+
+.rectangle3avions, .rectangle4villes {
+    padding: 5px;
+}
+
+.rectangle3avions {
+    position: relative;
+    top: -30%;
+    left: 25%;
+    transform: translateX(-50%); /* Center horizontally */
+    text-align: center;
+  }
+
+.rectangle3avionstext {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.rectangle4villes {
+    position: relative;
+    top: -30%;
+    left: 30%;
+    transform: translateX(-50%); /* Center horizontally */
+    text-align: center;
+  }
+
+.rectangle4villestext {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.row1, .row2 {
+    padding: 20px;
+}
