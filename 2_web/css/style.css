@@ -1,3 +1,14 @@
+body {
+    align-items: center;
+    background-color: rgb(67, 67, 67);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    color: black;
+}
+
 /* Added a flex container for vertical alignment */
 .row1 {
     display: flex;
@@ -13,8 +24,8 @@
     left: 25%; /* Align horizontally */
     transform: translateX(-50%); /* Center horizontally */
     text-align: center;
+    filter: drop-shadow(rgb(4, 10, 44) 0.4rem 0.4rem 15px);
 }
-
 .rectangle1naturetext {
     position: absolute;
     top: 50%;
@@ -51,6 +62,7 @@
     left: 25%;
     transform: translateX(-50%); /* Center horizontally */
     text-align: center;
+    filter: drop-shadow(rgb(0, 0, 0) 0.4rem 0.4rem 15px)
   }
 
 .rectangle3avionstext {
