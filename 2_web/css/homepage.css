@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Optima", "Candara", "Corbel", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+.hero {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../images/hero.jpg');
+    background-size: cover;
+}
+
+.hero-text-overlay h1 {
+    position: relative;
+    top: 10vh;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-weight: 100;
+    font-size: 250%;
+}
+
+.link-box {
+    position: relative;
+    top: 17vh;
+    text-align: center;
+    width: 15vh;
+    margin: 0 auto; /* auto makes the horizontal width get split evenly -> centered */
+    background-color: white;
+    border-radius: 20px;
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.link-box:hover {
+    background-color: #cacaca; /* slightly darker on hover */
+    transform: scale(1.05);   /* optional: zoom effect */
+}
+
+.link-box a, .link-box p {
+    color: black;
+    text-decoration: none;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
