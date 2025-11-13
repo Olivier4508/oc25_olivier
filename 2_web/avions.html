@@ -2,67 +2,77 @@
 
 <html>
     <head>
-        <title>Ma deuxième page</title>
+        <title>Avions</title>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="css/avions.css">
         <link rel="stylesheet" href="css/global.css">
+        <link rel="stylesheet" href="css/avions.css">
     </head>
 
     <body>
         <div class="top-link-grid">
             <div class="top-link">
                <p>
-                    <a href="index.html">Homepage</a>
+                    <a href="index.html" data-en="Homepage |" data-fr="Page d'acceuil |">Homepage |</a>
                 </p>
             </div>
             <div class="top-link">
                 <p>
-                     <a href="avions.html">Aviation</a>
+                     <a href="generalportfolio.html" data-en="General Portfolio | " data-fr="Portfolio Général | ">General Portfolio | </a>
                  </p>
              </div>
              <div class="top-link">
                 <p>
-                     <a href="#About">About</a>
+                     <a href="#About" data-en="About" data-fr="À propos">About</a>
                  </p>
              </div>
         </div>
-        <div class="title"><h1>Mes meilleures photos d'avions</h1></div>
+
+        <div class="title"><h1 data-en="My favorite aviation photos"data-fr="Mes meilleures photos d'avions">My favorite aviation photos</h1></div>
 
         <div class="grid-container">
 
-            <div class="photo">
-                <img src="images/avions1.JPG">
+            <div class="photo" data-gallery="vertical">
+                <img src="images/avions/avions4.jpg">
+                <p data-en="Vertical" data-fr="Vertical">Vertical</p>
             </div>
 
-            <div class="photo">
-                <img src="images/avions3.jpg">
+            <div class="photo" data-gallery="goldenhour">
+                <img src="images/avions/avions1.jpg">
+                <p data-en="Sunset / Sunrise" data-fr="Coucher / Lêver du soleil">Sunset / Sunrise</p>
             </div>
 
-            <div class="photo">
-                <img src="images/avions1.JPG">
+            <div class="photo" data-gallery="snow">
+                <img src="images/avions/avions5.JPG">
+                <p data-en="Snow" data-fr="Neige">Snow</p>
             </div>
 
-            <div class="photo">
-                <img src="images/avions1.JPG">
+            <div class="photo" data-gallery="military">
+                <img src="images/avions/avions1.JPG">
+                <p>Montagnes</p>
             </div>
 
-            <div class="photo">
-                <img src="images/avions1.JPG">
-            </div>
-
-            <div class="photo">
-                <img src="images/avions1.JPG">
+            <div class="photo" data-gallery="military">
+                <img src="images/avions/avions1.JPG">
+                <p>Montagnes</p>
             </div>
         </div>
 
-        <div class="profile">
-            <h2>About :</h2>
-            <a name="About"><p>
-                Bienvenue sur mon site web. Ici je partage une collection de mes photos préférés.
-            </p></a>
+        <div id="lightbox" class="lightbox">
+            <div class="lightbox-content"> <!-- Wraps the image, caption and navtools so they can be positioned relative to the image -->
+                <span class="close">&times;</span> <!-- &times; means the multiplacation symbol -> an X to close the gallery -->
+                <img id="lightbox-img" src="" alt=""> <!-- place holder image which will be replaced by JS -->
+                <div id="lightbox-caption" class="caption"></div> <!-- place holder caption which will be replaced by JS -->
+                <span class="prev">&#10094;</span> <!-- left arrow symbol -->
+                <span class="next">&#10095;</span> <!-- right arrow symbol -->
+            </div>
+        </div>
+
+        <div class="lang-toggle">
+            <span id="lang-en" class="lang-link active">EN</span> | 
+            <span id="lang-fr" class="lang-link">FR</span>
         </div>
     </body>
 
-
+<script src="avions.js"></script>
 
 </html>

@@ -21,14 +21,28 @@ a {
 .grid-container {
     margin: 1%;
     display: grid;
-    grid-template-columns: 3fr 2fr;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-areas: 
+    "a a a a a a b b b b b b b b b b"
+    "c c c c c c c c c c c c c c c c"
+    "d d d d d d d d e e e e e e e e";
     gap: 15px;
 }
 
 .photo {
-    aspect-ratio: unset;
-    text-align: center;
+    position: relative;
+    display: flex;
+    align-items: center;
 }
+
+.photo:nth-child(1) {grid-area: a;}
+.photo:nth-child(2) {grid-area: b;}
+.photo:nth-child(3) {
+    grid-area: c;
+    max-height: 50vh;
+}
+.photo:nth-child(4) {grid-area: d;}
+.photo:nth-child(5) {grid-area: e;}
 
 .photo img {
     width: 100%;
@@ -39,10 +53,9 @@ a {
 
 .photo p {
     position: absolute;
-    left: 0;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     opacity: 0;
     color: aliceblue;
 }
@@ -54,6 +67,104 @@ a {
 .photo:hover img {
     filter: brightness(50%);  /* darken image slightly */
     transform: scale(0.975);   /* optional: zoom effect */
+}
+
+.lightbox {
+    display: none; /* hidden by default */
+    position: fixed; /* position: fixed and top: 0; left: 0; make it cover the whole viewport and stay in place while scrolling */
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* makes sure the overlay appears over everything else */
+}
+
+.lightbox content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 90%;
+    max-height: 90%;
+    flex-direction: column;
+    animation: fadeIn 0.3s ease;
+}
+
+.lightbox img {  /* ensures the image is fully visible, doesnt overflow */
+    max-width: 120vh;
+    max-height: 90vh;
+    object-fit: contain;
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+.caption {
+    margin-top: 10px;
+    color: #fff;
+    font-size: 1.1rem;
+    padding: 6px 14px;
+    border-radius: 10px;
+    max-width: 100%;
+    text-align: center;
+}
+
+.close {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10;
+    user-select: none;
+}
+  
+.prev, .next {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+    padding: 0 20px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.prev { left: 5vh; }   /* move left arrow to left side of content */
+.next { right: 5vh; }  /* move right arrow to right side of content */
+
+/* Fade animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.lang-toggle {
+    position: absolute;
+    top: 3vh;
+    right: 3vh;
+    z-index: 2000;        /* above other elements */
+}
+  
+.lang-link {
+    cursor: pointer;
+    color: #007bff;       /* blue like a link */
+    margin: 0 4px;
+    transition: color 0.2s ease;
+}
+  
+.lang-link:hover {
+    color: #0056b3;       /* darker on hover */
+}
+  
+.lang-link.active {
+    font-weight: bold;    /* indicates selected language */
+    text-decoration: none;
+    color: black;         /* optional: active language black */
 }
 
 .top-link-grid {
@@ -68,15 +179,4 @@ a {
     left: 2vh;
     text-align: center;
     flex: 0 0 auto;
-}
-
-.profile {
-    position: relative;
-    padding-top: 10%;
-    padding-bottom: 2%;
-    margin-left: 2%;
-}
-
-.profile h2, p {
-    color: black;
 }
