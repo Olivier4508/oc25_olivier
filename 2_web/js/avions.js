@@ -1,6 +1,7 @@
 const galleries = {
     vertical: [
       { src: 'images/avions/avions4.jpg', caption: 'Face to face with this Air Baltic A220 in Zurich' },
+      { src: 'images/avions/avions9.jpg', caption: 'Swiss A220' },
       { src: 'images/avions/avions3.jpg', caption: 'Underbelly of an Edelweiss A340' },
     ],
     goldenhour: [
@@ -8,8 +9,17 @@ const galleries = {
       { src: 'images/avions/avions6.jpg', caption: 'On the tarmac at sunset in Zurich with this Ethiopian A350' }
     ],
     snow: [
+        { src: 'images/avions/avions8.jpg', caption: 'Air Canada A330 with a snowy Jura' },
         { src: 'images/avions/avions5.jpg', caption: 'Swiss A330 arriving in front of a snowy Jura' },
         { src: 'images/avions/avions7.jpg', caption: 'KLM with the same snowy Jura backdrop' },
+    ],
+    military: [
+      { src: 'images/avions/avions10.jpg', caption: 'USAF F15 on static display at the 2025 Paris Airshow' },
+    ],
+    nightshots: [
+      { src: 'images/avions/avions11.jpg', caption: 'Swiss A220 pushback' },
+      { src: 'images/avions/avions12.jpg', caption: 'Iberia taxiing in' },
+      { src: 'images/avions/avions13.jpg', caption: 'Vueling A320 starting her journey back to BCN' },
     ],
   };
   

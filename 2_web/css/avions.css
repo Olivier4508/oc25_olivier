@@ -25,7 +25,7 @@ a {
     grid-template-areas: 
     "a a a a a a b b b b b b b b b b"
     "c c c c c c c c c c c c c c c c"
-    "d d d d d d d d e e e e e e e e";
+    "d d d d d d d d d d e e e e e e";
     gap: 15px;
 }
 
@@ -35,12 +35,9 @@ a {
     align-items: center;
 }
 
-.photo:nth-child(1) {grid-area: a;}
-.photo:nth-child(2) {grid-area: b;}
-.photo:nth-child(3) {
-    grid-area: c;
-    max-height: 50vh;
-}
+.photo:nth-child(1) {grid-area: a; max-height: 90vh}
+.photo:nth-child(2) {grid-area: b; max-height: 90vh}
+.photo:nth-child(3) {grid-area: c; max-height: 50vh}
 .photo:nth-child(4) {grid-area: d;}
 .photo:nth-child(5) {grid-area: e;}
 

@@ -114,7 +114,8 @@ a {
     position: relative;
     padding-top: 10%;
     padding-bottom: 2%;
-    margin-left: 2%;
+    margin-left: 14vh;
+    width: 70vh;
 }
 
 .profile h2, p {
