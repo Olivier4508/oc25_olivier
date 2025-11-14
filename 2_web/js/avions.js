@@ -1,25 +1,41 @@
 const galleries = {
     vertical: [
-      { src: 'images/avions/avions4.jpg', caption: 'Face to face with this Air Baltic A220 in Zurich' },
+      { src: 'images/avions/avions4.jpg', caption: 'Face to face with this Air Baltic A220 in ZRH' },
       { src: 'images/avions/avions9.jpg', caption: 'Swiss A220' },
+      { src: 'images/avions/avions20.jpg', caption: 'UA 787 with the SAF livery landing with the San Francisco skyline' },
       { src: 'images/avions/avions3.jpg', caption: 'Underbelly of an Edelweiss A340' },
     ],
     goldenhour: [
       { src: 'images/avions/avions1.jpg', caption: 'Etihad 787 gliding into GVA with some gorgeous sunrise lighting' },
-      { src: 'images/avions/avions6.jpg', caption: 'On the tarmac at sunset in Zurich with this Ethiopian A350' }
+      { src: 'images/avions/avions6.jpg', caption: 'On the tarmac at sunset in ZRH with this Ethiopian A350' }
     ],
     snow: [
         { src: 'images/avions/avions8.jpg', caption: 'Air Canada A330 with a snowy Jura' },
         { src: 'images/avions/avions5.jpg', caption: 'Swiss A330 arriving in front of a snowy Jura' },
         { src: 'images/avions/avions7.jpg', caption: 'KLM with the same snowy Jura backdrop' },
+        { src: 'images/avions/avions21.jpg', caption: 'Heli in its natural habitat' },
+        { src: 'images/avions/avions22.jpg', caption: 'Crazy downwash' },
     ],
     military: [
       { src: 'images/avions/avions10.jpg', caption: 'USAF F15 on static display at the 2025 Paris Airshow' },
+      { src: 'images/avions/avions18.jpg', caption: 'Swiss Air Force general arriving in his Eurocopter for the Bex Airshow' },
     ],
     nightshots: [
       { src: 'images/avions/avions11.jpg', caption: 'Swiss A220 pushback' },
       { src: 'images/avions/avions12.jpg', caption: 'Iberia taxiing in' },
       { src: 'images/avions/avions13.jpg', caption: 'Vueling A320 starting her journey back to BCN' },
+    ],
+    condensation: [
+      { src: 'images/avions/avions16.jpg', caption: 'Nice condensation on this Aegean A321neo' },
+      { src: 'images/avions/avions15.jpg', caption: 'The first Aer Lingus A321XLR, registered EI-XLR' },
+    ],
+    gradients: [
+      { src: 'images/avions/avions17.jpg', caption: 'Fluffy UA767 banking in ZRH' },
+      { src: 'images/avions/avions19.jpg', caption: 'Korean 777 roaring out of SFO' },
+    ],
+    governmental: [
+      { src: 'images/avions/avions23.jpg', caption: 'Face to face with the UAE Presidential Jet' },
+      { src: 'images/avions/avions24.jpg', caption: 'AF2 with Kamala Harris arriving in ZRH in 2024 for Burgenstock' },
     ],
   };
   
