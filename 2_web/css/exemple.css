@@ -9,3 +9,11 @@
 .voleur {
     background-color: blue;
 }
+
+h1 {
+    color: blue;
+}
+
+canvas {
+    border: 1px solid black;
+}
