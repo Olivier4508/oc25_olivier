@@ -1,6 +1,7 @@
 body {
     scroll-behavior: smooth;
     background-color: white;
+    padding: 5vh;
 }
 
 h1 {
