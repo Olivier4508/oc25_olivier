@@ -91,7 +91,7 @@ a {
 
 .top-link {
     position: relative;
-    top: 1vh;
+    top: 0vh;
     left: 2vh;
     text-align: center;
     flex: 0 0 auto;
@@ -100,23 +100,14 @@ a {
 .top-link-grid {
     display: flex;
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-}
-
-.top-link {
-    position: relative;
-    top: 1vh;
-    left: 2vh;
-    text-align: center;
-    flex: 0 0 auto;
+    gap: 2px;
 }
 
 .profile {
     position: relative;
     padding-top: 10%;
-    padding-bottom: 2%;
-    margin-left: 14vh;
-    width: 70vh;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .profile h2, p {

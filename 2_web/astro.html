@@ -2,15 +2,97 @@
 
 <html>
     <head>
-        <title>Ma deuxième page</title>
+        <title>Avions</title>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="/2_web/css/astro.css">
+        <link rel="stylesheet" href="css/global.css">
+        <link rel="stylesheet" href="css/astro.css">
     </head>
 
     <body>
+        <div class="top-link-grid">
+            <div class="top-link">
+               <p>
+                    <a href="index.html" data-en="Homepage |" data-fr="Page d'acceuil |">Homepage |</a>
+                </p>
+            </div>
+            <div class="top-link">
+                <p>
+                     <a href="generalportfolio.html" data-en="General Portfolio | " data-fr="Portfolio Général | ">General Portfolio | </a>
+                 </p>
+             </div>
+             <div class="top-link">
+                <p>
+                     <a href="generalportfolio.html#About" data-en="About" data-fr="À propos">About</a>
+                 </p>
+             </div>
+        </div>
+
+        <div class="title"><h1 data-en="My favorite space photos"data-fr="Mes meilleures photos de l'espace">My favorite space photos</h1></div>
+
+        <div class="grid-container">
+
+            <div class="photo" data-gallery="nature">
+                <img src="images/nature/nature1.JPG">
+                <p data-en="Governmental" data-fr="Gouvernemental">Governmental</p>
+            </div>
+
+            <div class="photo" data-gallery="galaxies">
+                <img src="images/astro/astro1.jpg">
+                <p data-en="Galaxies" data-fr="Galaxies">Galaxies</p>
+            </div>
+
+            <div class="photo" data-gallery="snow">
+                <img src="images/avions/avions8.jpg">
+                <p data-en="Snow" data-fr="Neige">Snow</p>
+            </div>
+
+            <div class="photo" data-gallery="nightshots">
+                <img src="images/avions/avions11.JPG">
+                <p data-en="Night Shots" data-fr="Photos de Nuit">Night Shots</p>
+            </div>
+
+            <div class="photo" data-gallery="military">
+                <img src="images/avions/avions10.JPG">
+                <p data-en="Military" data-fr="Militaire">Military</p>
+            </div>
+
+            <div class="photo" data-gallery="goldenhour">
+                <img src="images/avions/avions1.jpg">
+                <p data-en="Sunset / Sunrise" data-fr="Coucher / Lêver du soleil">Sunset / Sunrise</p>
+            </div>
+
+            <div class="photo" data-gallery="vertical">
+                <img src="images/avions/avions4.jpg">
+                <p data-en="Vertical" data-fr="Vertical">Vertical</p>
+            </div>
+
+            <div class="photo" data-gallery="condensation">
+                <img src="images/avions/avions16.jpg">
+                <p data-en="Condensation" data-fr="Condensation">Condensation</p>
+            </div>
+
+            <div class="photo" data-gallery="condensation">
+                <img src="images/avions/avions16.jpg">
+                <p data-en="Condensation" data-fr="Condensation">Condensation</p>
+            </div>
+        </div>
+
+        <div id="lightbox" class="lightbox">
+            <div class="lightbox-content"> <!-- Wraps the image, caption and navtools so they can be positioned relative to the image -->
+                <span class="close">&times;</span> <!-- &times; means the multiplacation symbol -> an X to close the gallery -->
+                <img id="lightbox-img" src="" alt=""> <!-- place holder image which will be replaced by JS -->
+                <div id="lightbox-caption" class="caption"></div> <!-- place holder caption which will be replaced by JS -->
+                <span class="prev">&#10094;</span> <!-- left arrow symbol -->
+                <span class="next">&#10095;</span> <!-- right arrow symbol -->
+            </div>
+        </div>
+
+        <div class="lang-toggle">
+            <span id="lang-en" class="lang-link active">EN</span> | 
+            <span id="lang-fr" class="lang-link">FR</span>
+        </div>
     </body>
 
-    <a href="/2_web/index.html">Index</a>
-
+<script src="js/astro.js"></script>
 
 </html>
