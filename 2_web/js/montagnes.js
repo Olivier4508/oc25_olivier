@@ -1,9 +1,36 @@
 const galleries = {
+    télésièges: [
+      { src: 'images/montagnes/montagnes11.jpg', caption: 'Télésiège sous les étoiles' },
+      { src: 'images/montagnes/montagnes5.jpg', caption: 'Télésièges aux Portes du Soleil' },
+      { src: 'images/montagnes/montagnes4.jpg', caption: 'Télésièges aux Portes du Soleil' },
+      { src: 'images/montagnes/montagnes7.jpg', caption: '' },
+    ],
     forets: [
       { src: 'images/montagnes/montagnes1.jpg', caption: 'Belle lumière sur ces arbres aux Crosets' },
+      { src: 'images/montagnes/montagnes6.jpg', caption: '' },
+      { src: 'images/montagnes/montagnes3.jpg', caption: '' },
     ],
     montagnes: [
       { src: 'images/montagnes/montagnes2.jpg', caption: 'La Lune à Arolla' },
+      { src: 'images/montagnes/montagnes10.jpg', caption: 'Nuit aux Arcs' },
+      { src: 'images/montagnes/montagnes8.jpg', caption: 'Le Mont-Blanc' },
+      { src: 'images/montagnes/montagnes14.jpg', caption: '' },
+      { src: 'images/montagnes/montagnes15.jpg', caption: 'Lac Bleu à Arolla' },
+      { src: 'images/montagnes/montagnes16.jpg', caption: '' },
+      { src: 'images/montagnes/montagnes17.jpg', caption: 'La Cabane des Vignettes perchée sur son sommet' },
+      { src: 'images/montagnes/montagnes20.jpg', caption: '' },
+      { src: 'images/montagnes/montagnes21.jpg', caption: '' },
+    ],
+    glaciers: [
+      { src: 'images/montagnes/montagnes23.jpg', caption: '' },
+      { src: 'images/montagnes/montagnes22.jpg', caption: '' },
+      { src: 'images/montagnes/montagnes18.jpg', caption: '' },
+      { src: 'images/montagnes/montagnes19.jpg', caption: '' },
+    ],
+    téléfériques: [
+      { src: 'images/montagnes/montagnes12.jpg', caption: 'Télécabines en fin de journée' },
+      { src: 'images/montagnes/montagnes9.jpg', caption: "Téléférique de l'Aiguille Rouge" },
+      { src: 'images/montagnes/montagnes13.jpg', caption: 'Double' },
     ]
   };
   

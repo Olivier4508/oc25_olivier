@@ -20,7 +20,7 @@ a {
 }
 
 .grid-container {
-    margin: 7%;
+    margin: 5%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
@@ -60,16 +60,15 @@ a {
 }
 
 .lang-toggle {
-    position: absolute;
-    top: 3vh;
-    right: 2vh;
-    z-index: 2000;        /* above other elements */
+    display: flex;
+    gap: 5px;
+    z-index: 500;       /* above other elements */
 }
   
 .lang-link {
     cursor: pointer;
     color: #007bff;       /* blue like a link */
-    margin: 4px;
+    margin: 0 4px;
     transition: color 0.2s ease;
 }
   
@@ -86,30 +85,21 @@ a {
 .top-link-grid {
     display: flex;
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    gap: 5px;
 }
 
 .top-link {
-    position: relative;
-    top: 0vh;
-    left: 2vh;
     text-align: center;
     flex: 0 0 auto;
 }
 
-.top-link-grid {
+.top-bar {
     display: flex;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
-}
-
-.profile {
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 2vh;
+    padding-right: 2vh;
+    top: -2vh;
     position: relative;
-    padding-top: 10%;
-    width: 100%;
-    margin: 0 auto;
-}
-
-.profile h2, p {
-    color: black;
+    z-index: 500;
 }

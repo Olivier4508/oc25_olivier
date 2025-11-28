@@ -1,6 +1,20 @@
 const galleries = {
+    moon: [
+      { src: 'images/astro/astro4.jpg', caption: ''}
+    ],
     galaxies: [
       { src: 'images/astro/astro1.jpg', caption: 'Andromeda' },
+      { src: 'images/astro/astro7.jpg', caption: 'Milky Way over Greece' },
+    ],
+    aurora: [
+      { src: 'images/astro/astro8.jpg', caption: 'Auroras over Greenland' },
+    ],
+    stars: [
+      { src: 'images/astro/astro3.jpg', caption: 'Les Arcs' },
+      { src: 'images/astro/astro2.jpg', caption: '' }
+    ],
+    mountain: [
+      { src: 'images/astro/astro6.jpg', caption: 'Arolla' },
     ]
   };
   

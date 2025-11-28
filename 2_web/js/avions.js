@@ -12,6 +12,8 @@ const galleries = {
     snow: [
         { src: 'images/avions/avions8.jpg', caption: 'Air Canada A330 with a snowy Jura' },
         { src: 'images/avions/avions5.jpg', caption: 'Swiss A330 arriving in front of a snowy Jura' },
+        { src: 'images/avions/avions26.jpg', caption: 'UA767 departing' },
+        { src: 'images/avions/avions27.jpg', caption: 'AC330 Star Alliance roaring out of GVA' },
         { src: 'images/avions/avions7.jpg', caption: 'KLM with the same snowy Jura backdrop' },
         { src: 'images/avions/avions21.jpg', caption: 'Heli in its natural habitat' },
         { src: 'images/avions/avions22.jpg', caption: 'Crazy downwash' },
@@ -26,6 +28,7 @@ const galleries = {
       { src: 'images/avions/avions13.jpg', caption: 'Vueling A320 starting her journey back to BCN' },
     ],
     condensation: [
+      { src: 'images/avions/avions25.jpg', caption: 'Bit of fluff on the 🐐 United livery' },
       { src: 'images/avions/avions16.jpg', caption: 'Nice condensation on this Aegean A321neo' },
       { src: 'images/avions/avions15.jpg', caption: 'The first Aer Lingus A321XLR, registered EI-XLR' },
     ],
@@ -36,6 +39,11 @@ const galleries = {
     governmental: [
       { src: 'images/avions/avions23.jpg', caption: 'Face to face with the UAE Presidential Jet' },
       { src: 'images/avions/avions24.jpg', caption: 'AF2 with Kamala Harris arriving in ZRH in 2024 for Burgenstock' },
+    ],
+    swiss350: [
+      { src: 'images/avions/avions29.jpg', caption: 'The first Swiss A350-900, named Lausanne' },
+      { src: 'images/avions/avions28.jpg', caption: 'Close-up of this beauty' },
+      { src: 'images/avions/avions30.jpg', caption: '' },
     ],
   };
   
