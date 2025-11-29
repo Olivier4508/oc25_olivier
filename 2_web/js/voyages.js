@@ -1,7 +1,42 @@
 const galleries = {
+    china: [
+      { src: 'images/voyages/voyages5.jpg', caption: 'Oriental Pearl Tower in Shanghai' },
+      { src: 'images/voyages/voyages4.jpg', caption: 'Shanghai Tower' },
+      { src: 'images/voyages/voyages9.jpg', caption: 'Jin Mao Tower' },
+      { src: 'images/voyages/voyages8.jpg', caption: 'Shimao International Plaza' },
+      { src: 'images/voyages/voyages2.jpg', caption: '' },
+      { src: 'images/voyages/voyages3.jpg', caption: 'Golden Buddha' },
+      { src: 'images/voyages/voyages6.jpg', caption: 'The Great Wall' },
+      { src: 'images/hero.jpg', caption: 'The Bund' },
+      { src: 'images/voyages/voyages7.jpg', caption: '' },
+      { src: 'images/voyages/voyages10.jpg', caption: 'Nanpu Bridge' },
+    ],
     sttropez: [
-      { src: 'images/villes/villes1.jpg', caption: 'Le Port de St-Tropez' },
-    ]
+      { src: 'images/voyages/voyages1.jpg', caption: 'Le Port de St-Tropez' },
+      { src: 'images/voyages/voyages14.jpg', caption: 'Warm ambiance on this small fishing boat' },
+      { src: 'images/voyages/voyages15.jpg', caption: 'Christmas lighting' },
+      { src: 'images/voyages/voyages13.jpg', caption: '' },
+      { src: 'images/voyages/voyages12.jpg', caption: '' },
+      { src: 'images/voyages/voyages11.jpg', caption: 'One of the many yachts' },
+    ],
+    sanfrancisco: [
+      { src: 'images/voyages/voyages18.jpg', caption: 'Golden Gate Bridge' },
+      { src: 'images/voyages/voyages23.jpg', caption: 'Sutro Tower' },
+      { src: 'images/voyages/voyages16.jpg', caption: 'Bottom of the Palace of Fine Arts' },
+      { src: 'images/voyages/voyages17.jpg', caption: '' },
+      { src: 'images/voyages/voyages19.jpg', caption: '' },
+      { src: 'images/voyages/voyages20.jpg', caption: '' },
+      { src: 'images/voyages/voyages21.jpg', caption: 'Salesforce building in the back' },
+      { src: 'images/voyages/voyages22.jpg', caption: '' },
+    ],
+    northernspain: [
+      { src: 'images/voyages/voyages28.JPG', caption: "Jeff Koon's 'Puppy', guarding the Guggenheim Museum in Bilbao" },
+      { src: 'images/voyages/voyages24.JPG', caption: 'Bilbao buildings' },
+      { src: 'images/voyages/voyages25.JPG', caption: 'Puente de la Salve' },
+      { src: 'images/voyages/voyages26.JPG', caption: 'Sunset hitting a church in Vigo' },
+      { src: 'images/voyages/voyages27.JPG', caption: 'Zubizuri Bridge' },
+      { src: 'images/voyages/voyages29.JPG', caption: 'Warm atmosphere in Vigo' },
+    ],
   };
   
 var lightbox = document.getElementById('lightbox');

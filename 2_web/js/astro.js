@@ -1,17 +1,17 @@
 const galleries = {
     moon: [
-      { src: 'images/astro/astro4.jpg', caption: ''}
+      { src: 'images/astro/astro4.jpg', caption: 'Waxing gibbous moon'}
     ],
     galaxies: [
       { src: 'images/astro/astro1.jpg', caption: 'Andromeda' },
       { src: 'images/astro/astro7.jpg', caption: 'Milky Way over Greece' },
     ],
     aurora: [
-      { src: 'images/astro/astro8.jpg', caption: 'Auroras over Greenland' },
+      { src: 'images/astro/astro8.jpg', caption: 'Auroras over Greenland, seen on flight EI60 SFO-DUB' },
     ],
     stars: [
-      { src: 'images/astro/astro3.jpg', caption: 'Les Arcs' },
-      { src: 'images/astro/astro2.jpg', caption: '' }
+      { src: 'images/astro/astro3.jpg', caption: 'Chairlift in les Arcs' },
+      { src: 'images/astro/astro2.jpg', caption: 'Purple hue in Gstaad' }
     ],
     mountain: [
       { src: 'images/astro/astro6.jpg', caption: 'Arolla' },

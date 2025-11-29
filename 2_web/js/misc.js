@@ -1,7 +1,34 @@
 const galleries = {
+    fireworks: [
+      { src: 'images/misc/misc2.jpg', caption: "Feux d'artifices roses" },
+      { src: 'images/misc/misc3.jpg', caption: "" },
+      { src: 'images/misc/misc4.jpg', caption: "Le climax du show" },
+      { src: 'images/misc/misc6.jpg', caption: "Couleurs avec un esprit festif" },  
+      { src: 'images/misc/misc5.jpg', caption: "Conclusion dorée au-dessus de la Méditerranée" },
+    ],
     mouette: [
-      { src: 'images/misc/misc1.jpg', caption: "Une mouette avec un beau arc-en-ciel du Jet d'Eau derrière" },
-    ]
+      { src: 'images/misc/misc1.jpg', caption: "Une mouette avec un beau arc-en-ciel créé par le Jet d'Eau derrière" },
+      { src: 'images/misc/misc12.jpg', caption: "Juxtaposition entre un emblême genevois, le Jet d'Eau, et l'un des bateaux de 'La Belle Epoque' de la CGN" },
+    ],
+    truck1: [
+      { src: 'images/misc/misc7.jpg', caption: "GMC Sierra X31 Off-Road" },
+      { src: 'images/misc/misc8.JPG', caption: "GMC Sierra Denali" },
+      { src: 'images/misc/misc9.JPG', caption: "Dodge Ram under a starry Utah sky" },
+    ],
+    truck2: [
+      { src: 'images/misc/misc8.JPG', caption: "GMC Sierra Denali" },
+      { src: 'images/misc/misc9.JPG', caption: "Dodge Ram under a starry Utah sky" },
+      { src: 'images/misc/misc7.JPG', caption: "GMC Sierra X31 Off-Road" },
+    ],
+    truck3: [
+      { src: 'images/misc/misc9.JPG', caption: "Dodge Ram under a starry Utah sky" },
+      { src: 'images/misc/misc7.JPG', caption: "GMC Sierra X31 Off-Road" },
+      { src: 'images/misc/misc8.JPG', caption: "GMC Sierra Denali" },
+    ],
+    fastcar: [
+      { src: 'images/misc/misc10.jpg', caption: "Lamborghini Huracan STO" },
+      { src: 'images/misc/misc11.jpg', caption: "Porsche 911" },
+    ],
   };
   
 var lightbox = document.getElementById('lightbox');

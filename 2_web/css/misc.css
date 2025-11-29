@@ -25,10 +25,8 @@ a {
     grid-template-columns: repeat(16, 1fr);
     grid-template-areas: 
     "a a a a a b b b b b b b b b b b"
-    "c c c c c c c c c c c c c c c c"
-    "d d d d d d d d d d e e e e e e"
-    "f f f f f f f f f f g g g g g g"
-    "h h h h h h h i i i i i i i i i";
+    "c c c c d d d d e e e e e e e e"
+    "f f f f f f f f f f f f f f f f";
     gap: 15px;
 }
 
@@ -40,13 +38,10 @@ a {
 
 .photo:nth-child(1) {grid-area: a; max-height: 90vh}
 .photo:nth-child(2) {grid-area: b; max-height: 90vh}
-.photo:nth-child(3) {grid-area: c; max-height: 50vh}
+.photo:nth-child(3) {grid-area: c;}
 .photo:nth-child(4) {grid-area: d;}
 .photo:nth-child(5) {grid-area: e;}
-.photo:nth-child(6) {grid-area: f;}
-.photo:nth-child(7) {grid-area: g;}
-.photo:nth-child(8) {grid-area: h;}
-.photo:nth-child(9) {grid-area: i;}
+.photo:nth-child(6) {grid-area: f; max-height: 75vh}
 
 .photo img {
     width: 100%;

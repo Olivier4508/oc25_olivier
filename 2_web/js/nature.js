@@ -2,12 +2,14 @@ const galleries = {
     desert: [
       { src: 'images/nature/nature3.JPG', caption: 'Sunlight peeking through' },
       { src: 'images/nature/nature4.JPG', caption: 'Closeup in Antelope Canyon' },
-      { src: 'images/nature/nature5.JPG', caption: 'Sunset lit rock' },
+      { src: 'images/nature/nature5.JPG', caption: 'Sunset lit rock over Horseshoe Bend' },
       { src: 'images/nature/nature6.JPG', caption: 'Monument Valley' },
     ],
     ocean: [
       { src: 'images/nature/nature1.jpg', caption: 'The Atlantic encountering the north of Spain' },
+      { src: 'images/nature/nature14.jpg', caption: 'The rugged coast near Bilbao' },
       { src: 'images/nature/nature2.jpg', caption: 'Mediterranean Sea in Greece' },
+      { src: 'images/nature/nature15.jpg', caption: 'Lac Leman' },
     ],
     sunset_sunrise: [
       { src: 'images/nature/nature7.jpg', caption: 'Sunrise over the ocean' },
@@ -15,12 +17,12 @@ const galleries = {
       { src: 'images/nature/nature9.jpg', caption: 'Graduation ahh colors' },
     ],
     waterfalls: [
-      { src: 'images/nature/nature10.jpg', caption: '' },
+      { src: 'images/nature/nature10.jpg', caption: 'A lush waterfall in Oregon, USA' },
     ],
     clouds: [
-      { src: 'images/nature/nature13.jpg', caption: '' },
-      { src: 'images/nature/nature11.jpg', caption: '' },
-      { src: 'images/nature/nature12.jpg', caption: '' },
+      { src: 'images/nature/nature13.jpg', caption: 'Amazing textures and colors in the sunset over Lausanne' },
+      { src: 'images/nature/nature11.jpg', caption: 'A wispy rain cloud bathed in the soft glow of the sun' },
+      { src: 'images/nature/nature12.jpg', caption: 'Thought this cloud at sunrise looked like the shape of a fish or a dragon' },
     ],
   };
   

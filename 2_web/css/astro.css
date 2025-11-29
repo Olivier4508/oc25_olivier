@@ -204,3 +204,8 @@ a {
     position: relative;
     z-index: 500;
 }
+
+.footer {
+    padding: 2vh;
+    color: aliceblue;
+}
