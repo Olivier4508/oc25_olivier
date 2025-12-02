@@ -39,7 +39,6 @@ const galleries = {
       { src: 'images/avions/avions9.jpg', caption: 'Swiss A220' },
       { src: 'images/avions/avions20.jpg', caption: 'UA 787 with the SAF livery landing with the San Francisco skyline' },
       { src: 'images/avions/avions3.jpg', caption: 'Underbelly of an Edelweiss A340' },
-      { src: 'images/avions/avions3.jpg', caption: 'Underbelly of an Edelweiss A340' },
       { src: 'images/avions/avions37.jpg', caption: 'Some arrivals in Heraklion' },
       { src: 'images/avions/avions38.jpg', caption: '' },
       { src: 'images/avions/avions39.jpg', caption: '' },
