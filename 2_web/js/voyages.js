@@ -30,12 +30,12 @@ const galleries = {
       { src: 'images/voyages/voyages22.jpg', caption: '' },
     ],
     northernspain: [
-      { src: 'images/voyages/voyages28.JPG', caption: "Jeff Koon's 'Puppy', guarding the Guggenheim Museum in Bilbao" },
-      { src: 'images/voyages/voyages24.JPG', caption: 'Bilbao buildings' },
-      { src: 'images/voyages/voyages25.JPG', caption: 'Puente de la Salve' },
-      { src: 'images/voyages/voyages26.JPG', caption: 'Sunset hitting a church in Vigo' },
-      { src: 'images/voyages/voyages27.JPG', caption: 'Zubizuri Bridge' },
-      { src: 'images/voyages/voyages29.JPG', caption: 'Warm atmosphere in Vigo' },
+      { src: 'images/voyages/voyages28.jpg', caption: "Jeff Koon's 'Puppy', guarding the Guggenheim Museum in Bilbao" },
+      { src: 'images/voyages/voyages24.jpg', caption: 'Bilbao buildings' },
+      { src: 'images/voyages/voyages25.jpg', caption: 'Puente de la Salve' },
+      { src: 'images/voyages/voyages26.jpg', caption: 'Sunset hitting a church in Vigo' },
+      { src: 'images/voyages/voyages27.jpg', caption: 'Zubizuri Bridge' },
+      { src: 'images/voyages/voyages29.jpg', caption: 'Warm atmosphere in Vigo' },
     ],
   };
   

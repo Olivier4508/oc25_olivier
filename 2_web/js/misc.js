@@ -12,18 +12,18 @@ const galleries = {
     ],
     truck1: [
       { src: 'images/misc/misc7.jpg', caption: "GMC Sierra X31 Off-Road" },
-      { src: 'images/misc/misc8.JPG', caption: "GMC Sierra Denali" },
-      { src: 'images/misc/misc9.JPG', caption: "Dodge Ram under a starry Utah sky" },
+      { src: 'images/misc/misc8.jpg', caption: "GMC Sierra Denali" },
+      { src: 'images/misc/misc9.jpg', caption: "Dodge Ram under a starry Utah sky" },
     ],
     truck2: [
-      { src: 'images/misc/misc8.JPG', caption: "GMC Sierra Denali" },
-      { src: 'images/misc/misc9.JPG', caption: "Dodge Ram under a starry Utah sky" },
-      { src: 'images/misc/misc7.JPG', caption: "GMC Sierra X31 Off-Road" },
+      { src: 'images/misc/misc8.jpg', caption: "GMC Sierra Denali" },
+      { src: 'images/misc/misc9.jpg', caption: "Dodge Ram under a starry Utah sky" },
+      { src: 'images/misc/misc7.jpg', caption: "GMC Sierra X31 Off-Road" },
     ],
     truck3: [
-      { src: 'images/misc/misc9.JPG', caption: "Dodge Ram under a starry Utah sky" },
-      { src: 'images/misc/misc7.JPG', caption: "GMC Sierra X31 Off-Road" },
-      { src: 'images/misc/misc8.JPG', caption: "GMC Sierra Denali" },
+      { src: 'images/misc/misc9.jpg', caption: "Dodge Ram under a starry Utah sky" },
+      { src: 'images/misc/misc7.jpg', caption: "GMC Sierra X31 Off-Road" },
+      { src: 'images/misc/misc8.jpg', caption: "GMC Sierra Denali" },
     ],
     fastcar: [
       { src: 'images/misc/misc10.jpg', caption: "Lamborghini Huracan STO" },

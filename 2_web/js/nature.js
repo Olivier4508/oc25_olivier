@@ -1,9 +1,9 @@
 const galleries = {
     desert: [
-      { src: 'images/nature/nature3.JPG', caption: 'Sunlight peeking through' },
-      { src: 'images/nature/nature4.JPG', caption: 'Closeup in Antelope Canyon' },
-      { src: 'images/nature/nature5.JPG', caption: 'Sunset lit rock over Horseshoe Bend' },
-      { src: 'images/nature/nature6.JPG', caption: 'Monument Valley' },
+      { src: 'images/nature/nature3.jpg', caption: 'Sunlight peeking through' },
+      { src: 'images/nature/nature4.jpg', caption: 'Closeup in Antelope Canyon' },
+      { src: 'images/nature/nature5.jpg', caption: 'Sunset lit rock over Horseshoe Bend' },
+      { src: 'images/nature/nature6.jpg', caption: 'Monument Valley' },
     ],
     ocean: [
       { src: 'images/nature/nature1.jpg', caption: 'The Atlantic encountering the north of Spain' },
