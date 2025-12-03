@@ -1,27 +1,241 @@
+// ---------------------------
+// LANGUAGE TOGGLE (UNCHANGED)
+// ---------------------------
 const enLink = document.getElementById('lang-en');
 const frLink = document.getElementById('lang-fr');
 let currentLang = 'en';
 
 function setLang(lang) {
-  if (lang === currentLang) return; // do nothing if language already selected
+  if (lang === currentLang) return;
+  currentLang = lang;
 
-  currentLang = lang;  // updates language
-
-  if (lang === 'en') { // adds active class to EN (bold black text), FR loses it
+  if (lang === 'en') {
     enLink.classList.add('active');
     frLink.classList.remove('active');
-  } else { // if FR selected, EN loses it
+  } else {
     frLink.classList.add('active');
     enLink.classList.remove('active');
   }
 
-  // update all text elements
-  document.querySelectorAll('[data-en]').forEach(el => { // querySelectorAll grabs all elements with data-en attribute, forEach loops through each element
-    el.textContent = lang === 'en' ? el.getAttribute('data-en') : el.getAttribute('data-fr'); // el.textContent sets the visible text of the element
-    // if lang === 'en', use text from the 'data-en' attribute, otherwise use 'data-fr'
+  document.querySelectorAll('[data-en]').forEach(el => {
+    el.textContent = (lang === 'en') ? el.dataset.en : el.dataset.fr;
   });
 }
 
-// listen for clicks on the EN/FR buttons
-enLink.addEventListener('click', () => setLang('en'));
-frLink.addEventListener('click', () => setLang('fr'));
+if (enLink) enLink.addEventListener('click', () => setLang('en'));
+if (frLink) frLink.addEventListener('click', () => setLang('fr'));
+
+
+// ---------------------------
+// CANVAS SCROLLING ANIMATION
+// ---------------------------
+
+/*
+  Requirements:
+  - <canvas id="scrollCanvas"> must exist inside .canvas-container (or .animation-area)
+  - CSS must set the container's height (e.g. .canvas-container { height: 50vh; })
+*/
+
+(function () {
+  const canvas = document.getElementById("scrollCanvas");
+  if (!canvas) return; // no canvas on this page
+
+  const ctx = canvas.getContext("2d");
+  const DPR = window.devicePixelRatio || 1;
+
+  // --- EDIT IMAGE PATHS HERE ---
+  const themes = {
+    "astro": 8,        // astro1.jpg → astro8.jpg
+    "avions": 43,      // avions1.jpg → avions43.jpg
+    "misc": 12,
+    "montagnes": 24,
+    "voyages": 29,
+    "nature": 16
+  };
+
+  const imagePaths = [];
+
+  // loop over each theme
+  for (const [theme, count] of Object.entries(themes)) {
+    for (let i = 1; i <= count; i++) {
+      imagePaths.push(`images/${theme}/${theme}${i}.jpg`);
+    }
+  }
+
+  // Fisher–Yates shuffle (perfect random shuffle)
+  function shuffleArray(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+  }
+
+  shuffleArray(imagePaths);
+
+  const images = [];        // Image objects
+  let loadedCount = 0;      // how many images finished loading (or errored)
+  let scaledWidths = [];    // computed widths for each image when drawn at canvas height (CSS px)
+  let fullWidth = 0;        // total width of one image strip (CSS px)
+  let cssW = 0, cssH = 0;   // canvas size in CSS pixels
+
+  // animation state
+  let scrollX = 0;          // current left offset (CSS px)
+  let paused = false;       // hover pause
+  let speed = 0.8;          // pixels per frame (positive → scroll left)
+  const MIN_SPEED = 0.1;
+
+  // preload images and start when done
+  imagePaths.forEach((src, idx) => {
+    const img = new Image();
+    img.src = src;
+    img.onload = () => {
+      loadedCount++;
+      if (loadedCount === imagePaths.length) {
+        // all loaded successfully
+        setupAndStart();
+      }
+    };
+    img.onerror = () => {
+      console.warn("Canvas image failed to load:", src);
+      loadedCount++;
+      if (loadedCount === imagePaths.length) {
+        // proceed even if some failed
+        setupAndStart();
+      }
+    };
+    images.push(img);
+  });
+
+  // Resize helper: set canvas internal pixel buffer to match CSS size * DPR
+  function resizeCanvas() {
+    // CSS pixel size
+    const newCssW = Math.max(1, canvas.clientWidth);
+    const newCssH = Math.max(1, canvas.clientHeight);
+
+    // only update if changed (avoid unnecessary work)
+    if (newCssW === cssW && newCssH === cssH) return;
+
+    cssW = newCssW;
+    cssH = newCssH;
+
+    // set internal pixel size for sharpness on HiDPI displays
+    canvas.width = Math.max(1, Math.round(cssW * DPR));
+    canvas.height = Math.max(1, Math.round(cssH * DPR));
+
+    // map drawing coordinates so we can work in CSS pixels
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+
+    // recompute scaled widths for each loaded image (width when height = cssH)
+    scaledWidths = images.map(img => {
+      if (!img || !img.width || !img.height) return 0;
+      return img.width * (cssH / img.height);
+    });
+
+    // compute complete strip width (sum of scaled widths)
+    fullWidth = scaledWidths.reduce((acc, w) => acc + w, 0);
+
+    // safety fallback
+    if (fullWidth === 0) fullWidth = cssW * Math.max(1, images.length * 0.5);
+
+    // if scrollX is too negative relative to new fullWidth, wrap it
+    if (-scrollX >= fullWidth) scrollX = scrollX % fullWidth;
+  }
+
+  // Draw one image scaled to the canvas height, at x (CSS px)
+  // returns the actual width drawn (CSS px)
+  function drawImageScaledToHeight(img, x) {
+    if (!img || !img.width || !img.height) return 0;
+
+    const drawH = cssH;
+    const scale = drawH / img.height;
+    const drawW = img.width * scale;
+
+    // vertical offset (center vertically if needed)
+    const offsetY = 0; // drawH === cssH, so normally 0
+
+    ctx.drawImage(img, x, offsetY, drawW, drawH);
+    return drawW;
+  }
+
+  // Main animation loop
+  function startAnimation() {
+    if (images.length === 0) return;
+
+    let rafId = null;
+    function loop() {
+      // clear the visible CSS pixel area
+      ctx.clearRect(0, 0, cssW, cssH);
+
+      // start drawing at scrollX
+      let x = scrollX;
+
+      // draw each image in sequence
+      for (let i = 0; i < images.length; i++) {
+        const wDraw = drawImageScaledToHeight(images[i], x);
+        x += wDraw;
+      }
+
+      // draw a duplicate sequence right after for seamless loop
+      for (let i = 0; i < images.length; i++) {
+        const wDraw = drawImageScaledToHeight(images[i], x);
+        x += wDraw;
+      }
+
+      // advance scroll (unless paused)
+      if (!paused) {
+        scrollX -= speed;
+      }
+
+      // wrap when we scrolled past one full strip
+      if (-scrollX >= fullWidth) scrollX += fullWidth;
+
+      rafId = requestAnimationFrame(loop);
+    }
+
+    // start loop
+    if (!rafId) rafId = requestAnimationFrame(loop);
+
+    // expose a simple API via the canvas element for debugging/tuning if needed
+    canvas._canvasAPI = {
+      pause: () => { paused = true; },
+      resume: () => { paused = false; },
+      togglePause: () => { paused = !paused; },
+      setSpeed: (s) => { speed = Math.max(MIN_SPEED, Number(s) || MIN_SPEED); },
+      reverse: () => { speed = -speed; }
+    };
+  }
+
+  // Called once when images are loaded
+  function setupAndStart() {
+    // initial sizing
+    resizeCanvas();
+
+    // ensure canvas matches container after any CSS applied
+    // (small timeout helps if CSS hasn't finished layout)
+    setTimeout(resizeCanvas, 50);
+
+    // start animation loop
+    startAnimation();
+  }
+
+  // handle window resize (debounced)
+  let resizeTimer = null;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      resizeCanvas();
+    }, 80);
+  });
+
+  // Pause on hover
+  canvas.addEventListener("click", () => {
+    paused = !paused;
+  });
+
+  // Ensure initial canvas sizing even if images already cached/loaded earlier.
+  // If images finished loading before this script ran, we still want to start.
+  // If all images already loaded when script ran, trigger setup now.
+  if (loadedCount === imagePaths.length && images.length > 0) {
+    setupAndStart();
+  }
+})();

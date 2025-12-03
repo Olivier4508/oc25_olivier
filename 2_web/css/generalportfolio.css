@@ -23,14 +23,42 @@ a {
     margin: 5%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+    "a b"
+    "c d"
+    "e f"
+    "g g";
     gap: 15px;
 }
+
+.photo:nth-child(1) {grid-area: a; max-height: 50vh;}
+.photo:nth-child(2) {grid-area: b; max-height: 50vh;}
+.photo:nth-child(3) {grid-area: c; max-height: 50vh;}
+.photo:nth-child(4) {grid-area: d; max-height: 50vh;}
+.photo:nth-child(5) {grid-area: e; max-height: 50vh;}
+.photo:nth-child(6) {grid-area: f; max-height: 50vh;}
+.canvas-container {grid-area: g;}
 
 .photo {
     position: relative;
     display: flex;
     align-items: center;
     text-align: center;
+}
+
+.canvas-container {
+    grid-area: g;      /* adjust as you like */
+    position: relative;
+    height: 50vh;
+}
+
+.canvas-container canvas {
+    display: block;
+    object-fit: fill;
+    background: black; /* fallback background */
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .photo img {
@@ -40,21 +68,25 @@ a {
     transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-.photo p {
+.photo p, .canvas-container p {
     position: absolute;
-    left: 0;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
+    opacity: 0;              /* initially hidden */
+    transition: opacity 0.3s ease;
+    top: 50%;              /* vertical center */
+    left: 50%;             /* horizontal center */
+    transform: translate(-50%, -50%);  /* truly center the element */
+    margin: 0;
     color: aliceblue;
+    text-align: center;
+    pointer-events: none;  /* clicks go through to canvas */
 }
 
-.photo:hover p {
+
+.photo:hover p, .canvas-container:hover p {
     opacity: 1;               /* show overlay on hover */
 }
 
-.photo:hover img {
+.photo:hover img, .canvas-container:hover canvas {
     filter: brightness(50%);  /* darken image slightly */
     transform: scale(0.975);   /* optional: zoom effect */
 }

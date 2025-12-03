@@ -65,6 +65,7 @@ a {
     transform: translate(-50%, -50%);
     opacity: 0;
     color: aliceblue;
+    transition: opacity 0.3s ease;
 }
 
 .photo:hover p {
