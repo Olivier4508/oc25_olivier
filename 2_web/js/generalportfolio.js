@@ -106,8 +106,6 @@ if (frLink) frLink.addEventListener('click', () => setLang('fr'));
     const newCssW = Math.max(1, canvas.clientWidth);
     const newCssH = Math.max(1, canvas.clientHeight);
 
-    // only update if changed (avoid unnecessary work)
-
     cssW = newCssW;
     cssH = newCssH;
 
@@ -120,7 +118,7 @@ if (frLink) frLink.addEventListener('click', () => setLang('fr'));
 
     // recompute scaled widths for each loaded image (width when height = cssH)
     scaledWidths = images.map(img => {
-      if (!img || !img.width || !img.height) return 0;
+      if (!img || !img.width || !img.height) return 0; // || means or
       return img.width * (cssH / img.height);
     });
 
