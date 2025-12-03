@@ -56,7 +56,7 @@ if (frLink) frLink.addEventListener('click', () => setLang('fr'));
     }
   }
 
-  // Fisher–Yates shuffle (perfect random shuffle)
+  // perfect random shuffle
   function shuffleArray(arr) {
   for (let i = arr.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -107,7 +107,6 @@ if (frLink) frLink.addEventListener('click', () => setLang('fr'));
     const newCssH = Math.max(1, canvas.clientHeight);
 
     // only update if changed (avoid unnecessary work)
-    if (newCssW === cssW && newCssH === cssH) return;
 
     cssW = newCssW;
     cssH = newCssH;
