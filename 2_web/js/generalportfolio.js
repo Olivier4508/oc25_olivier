@@ -30,12 +30,6 @@ if (frLink) frLink.addEventListener('click', () => setLang('fr'));
 // CANVAS SCROLLING ANIMATION
 // ---------------------------
 
-/*
-  Requirements:
-  - <canvas id="scrollCanvas"> must exist inside .canvas-container (or .animation-area)
-  - CSS must set the container's height (e.g. .canvas-container { height: 50vh; })
-*/
-
 (function () {
   const canvas = document.getElementById("scrollCanvas");
   if (!canvas) return; // no canvas on this page
@@ -58,7 +52,7 @@ if (frLink) frLink.addEventListener('click', () => setLang('fr'));
   // loop over each theme
   for (const [theme, count] of Object.entries(themes)) {
     for (let i = 1; i <= count; i++) {
-      imagePaths.push(`images/${theme}/${theme}${i}.jpg`);
+      imagePaths.push("images/" + theme + "/" + theme + i + ".jpg");
     }
   }
 
