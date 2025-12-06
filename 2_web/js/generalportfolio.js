@@ -35,7 +35,7 @@ if (frLink) frLink.addEventListener('click', () => setLang('fr'));
   if (!canvas) return; // no canvas on this page
 
   const ctx = canvas.getContext("2d");
-  const DPR = window.devicePixelRatio || 1;
+  const DPR = window.devicePixelRatio || 1; // gets the DPR, if none default to 1
 
   // --- EDIT IMAGE PATHS HERE ---
   const themes = {
@@ -47,7 +47,7 @@ if (frLink) frLink.addEventListener('click', () => setLang('fr'));
     "nature": 16
   };
 
-  const imagePaths = [];
+  const imagePaths = []; // array of all image paths
 
   // loop over each theme
   for (const [theme, count] of Object.entries(themes)) {
@@ -56,12 +56,14 @@ if (frLink) frLink.addEventListener('click', () => setLang('fr'));
     }
   }
 
-  // perfect random shuffle
   function shuffleArray(arr) {
-  for (let i = arr.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [arr[i], arr[j]] = [arr[j], arr[i]];
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const swap = arr[i];
+      arr[i] = arr[j];
+      arr[j] = swap;
     }
+    return arr;
   }
 
   shuffleArray(imagePaths);
@@ -86,7 +88,7 @@ if (frLink) frLink.addEventListener('click', () => setLang('fr'));
       loadedCount++;
       if (loadedCount === imagePaths.length) {
         // all loaded successfully
-        setupAndStart();
+        setupAndStart();  // line 205
       }
     };
     img.onerror = () => {
@@ -103,18 +105,19 @@ if (frLink) frLink.addEventListener('click', () => setLang('fr'));
   // Resize helper: set canvas internal pixel buffer to match CSS size * DPR
   function resizeCanvas() {
     // CSS pixel size
-    const newCssW = Math.max(1, canvas.clientWidth);
+    const newCssW = Math.max(1, canvas.clientWidth); // min 1 px
     const newCssH = Math.max(1, canvas.clientHeight);
 
     cssW = newCssW;
     cssH = newCssH;
 
     // set internal pixel size for sharpness on HiDPI displays
-    canvas.width = Math.max(1, Math.round(cssW * DPR));
+    canvas.width = Math.max(1, Math.round(cssW * DPR)); // sets max pixel width to cssW * DPR
     canvas.height = Math.max(1, Math.round(cssH * DPR));
 
     // map drawing coordinates so we can work in CSS pixels
-    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);  // Sets the canvas transform so that next drawing coordinates are like CSS pixels.
+    // setTransform(DPR, 0, 0, DPR, 0, 0) scales the drawing by DPR so one unit in canvas drawing space equals one CSS pixel, preventing the need to multiply coordinates by DPR manually.
 
     // recompute scaled widths for each loaded image (width when height = cssH)
     scaledWidths = images.map(img => {
@@ -126,10 +129,11 @@ if (frLink) frLink.addEventListener('click', () => setLang('fr'));
     fullWidth = scaledWidths.reduce((acc, w) => acc + w, 0);
 
     // safety fallback
-    if (fullWidth === 0) fullWidth = cssW * Math.max(1, images.length * 0.5);
+    if (fullWidth === 0) fullWidth = cssW * Math.max(1, images.length * 0.5); // if width = 0 (eg no images loaded), set fallback width
 
     // if scrollX is too negative relative to new fullWidth, wrap it
-    if (-scrollX >= fullWidth) scrollX = scrollX % fullWidth;
+    if (-scrollX >= fullWidth) scrollX = scrollX % fullWidth; // If scrollX has drifted far enough that we've scrolled past one full strip (after a resize),
+    //  wrap it with modulus to keep it within one strip's length.
   }
 
   // Draw one image scaled to the canvas height, at x (CSS px)
@@ -144,8 +148,8 @@ if (frLink) frLink.addEventListener('click', () => setLang('fr'));
     // vertical offset (center vertically if needed)
     const offsetY = 0; // drawH === cssH, so normally 0
 
-    ctx.drawImage(img, x, offsetY, drawW, drawH);
-    return drawW;
+    ctx.drawImage(img, x, offsetY, drawW, drawH); // Draws the image at (x, offsetY) with dimensions (drawW, drawH)
+    return drawW; // returns the actual width drawn (to advance x for the next image)
   }
 
   // Main animation loop
@@ -185,32 +189,18 @@ if (frLink) frLink.addEventListener('click', () => setLang('fr'));
 
     // start loop
     if (!rafId) rafId = requestAnimationFrame(loop);
-
-    // expose a simple API via the canvas element for debugging/tuning if needed
-    canvas._canvasAPI = {
-      pause: () => { paused = true; },
-      resume: () => { paused = false; },
-      togglePause: () => { paused = !paused; },
-      setSpeed: (s) => { speed = Math.max(MIN_SPEED, Number(s) || MIN_SPEED); },
-      reverse: () => { speed = -speed; }
-    };
   }
 
   // Called once when images are loaded
   function setupAndStart() {
     // initial sizing
     resizeCanvas();
-
-    // ensure canvas matches container after any CSS applied
-    // (small timeout helps if CSS hasn't finished layout)
-    setTimeout(resizeCanvas, 50);
-
     // start animation loop
     startAnimation();
   }
 
   // handle window resize (debounced)
-  let resizeTimer = null;
+  let resizeTimer = null; // avoids excessive recomputation during continuous resizing
   window.addEventListener("resize", () => {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(() => {
