@@ -19,14 +19,6 @@ sampling_rate = 44100.0
 
 [sub_resource type="AudioStreamOggVorbis" id="AudioStreamOggVorbis_7mycd"]
 packet_sequence = SubResource("OggPacketSequence_1utue")
-tags = {
-"artist": "HorrorPen",
-"comment": "",
-"contact": "",
-"encoder": "FL Studio",
-"genre": "",
-"title": "House In a Forest Loop"
-}
 loop = true
 
 [node name="Main" type="Node"]
@@ -39,7 +31,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.87460464, 0.71668446, 0.72183806, 1)
+color = Color(0.874605, 0.716684, 0.721838, 1)
 
 [node name="Player" parent="." instance=ExtResource("1_ig7tw")]
 
