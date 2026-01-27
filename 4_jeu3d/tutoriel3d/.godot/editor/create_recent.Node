@@ -1,4 +1,7 @@
+AnimationPlayer
+AudioStreamPlayer
 Label
+ColorRect
 Control
 CollisionShape3D
 Area3D
@@ -9,7 +12,3 @@ MeshInstance3D
 Node3D
 VisibleOnScreenNotifier3D
 CharacterBody3D
-Camera3D
-Marker3D
-Node
-DirectionalLight3D
