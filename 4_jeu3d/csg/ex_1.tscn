@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://ceh3yiv0j12pu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l3jgc"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_45j5m"]
+albedo_color = Color(0, 0, 1, 1)
+anisotropy_enabled = true
+
+[node name="Ex1" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+material = SubResource("StandardMaterial3D_l3jgc")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, -0.5)
+material = SubResource("StandardMaterial3D_45j5m")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+material = SubResource("StandardMaterial3D_l3jgc")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="CSGBox3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, -0.5)
+operation = 1
+material = SubResource("StandardMaterial3D_45j5m")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08941, 0, 0)
+material = SubResource("StandardMaterial3D_l3jgc")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="CSGBox3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, -0.5)
+operation = 2
+material = SubResource("StandardMaterial3D_45j5m")
