@@ -1,16 +1,17 @@
-[gd_scene load_steps=25 format=3 uid="uid://qgiu6aank1vr"]
+[gd_scene load_steps=28 format=3 uid="uid://qgiu6aank1vr"]
 
 [sub_resource type="Environment" id="Environment_7rj46"]
 background_mode = 1
+background_color = Color(0.197937, 0.197937, 0.197937, 1)
 glow_enabled = true
-glow_intensity = 8.0
-glow_strength = 2.0
+glow_intensity = 4.0
 
 [sub_resource type="BoxMesh" id="BoxMesh_q7epf"]
 size = Vector3(100, 1, 100)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vxas0"]
-albedo_color = Color(0.336608, 0.336608, 0.336608, 1)
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.772951, 0.772951, 0.772951, 1)
 
 [sub_resource type="Curve" id="Curve_j4sxf"]
 _data = [Vector2(0, 0.503396), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -105,7 +106,6 @@ scale_max = 1.5
 scale_curve = SubResource("CurveTexture_4lvei")
 color = Color(0.992157, 0.486275, 0.168627, 1)
 color_ramp = SubResource("GradientTexture1D_3xjsk")
-color_initial_ramp = SubResource("GradientTexture1D_l04k4")
 alpha_curve = SubResource("CurveTexture_m5xho")
 emission_curve = SubResource("CurveTexture_ew515")
 
@@ -116,19 +116,40 @@ vertex_color_use_as_albedo = true
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_b02un"]
 material = SubResource("StandardMaterial3D_iuruv")
-top_radius = 0.1
+top_radius = 0.05
 bottom_radius = 0.0
-height = 1.0
+height = 0.25
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7rj46"]
+spread = 180.0
+initial_velocity_min = 3.0
+initial_velocity_max = 10.0
+scale_min = 0.1
+scale_max = 0.2
+collision_mode = 1
+collision_friction = 0.5
+collision_bounce = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q7epf"]
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.203322, 0.203322, 0.203322, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_vxas0"]
+material = SubResource("StandardMaterial3D_q7epf")
 
 [node name="Node3D" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_7rj46")
 
-[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+[node name="Floor" type="CSGMesh3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 mesh = SubResource("BoxMesh_q7epf")
 material = SubResource("StandardMaterial3D_vxas0")
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="Floor"]
+size = Vector3(100, 1, 100)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 
@@ -162,3 +183,12 @@ fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_1cbhc")
 draw_pass_1 = SubResource("CylinderMesh_b02un")
 draw_skin = SubResource("Skin_paiiv")
+
+[node name="Debris" type="GPUParticles3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+amount = 50
+lifetime = 2.0
+explosiveness = 0.9
+visibility_aabb = AABB(-7.6485, -4.28219, -7.23879, 15.3506, 6.4551, 14.7431)
+process_material = SubResource("ParticleProcessMaterial_7rj46")
+draw_pass_1 = SubResource("PrismMesh_vxas0")
