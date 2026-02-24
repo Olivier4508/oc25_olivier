@@ -1,3 +1,28 @@
-[gd_scene format=3 uid="uid://istg17x8fu66"]
+[gd_scene load_steps=5 format=3 uid="uid://istg17x8fu66"]
 
-[node name="Node3D" type="Node3D"]
+[ext_resource type="Texture2D" uid="uid://of14q8pspbga" path="res://icon.svg" id="1_2pqqt"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5ltu8"]
+emission_shape = 1
+emission_sphere_radius = 1.0
+initial_velocity_min = 1.0
+initial_velocity_max = 1.0
+gravity = Vector3(0, 1, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x6ecg"]
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_2pqqt")
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_icfi2"]
+material = SubResource("StandardMaterial3D_x6ecg")
+
+[node name="Fire" type="Node3D"]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+amount = 30
+process_material = SubResource("ParticleProcessMaterial_5ltu8")
+draw_pass_1 = SubResource("QuadMesh_icfi2")
