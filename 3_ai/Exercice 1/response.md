@@ -19,4 +19,4 @@ l’esprit de Math 4 Fun.
 
 Photo : 
 
-![](./aiposter.png)
+![](./aiphoto.png)
