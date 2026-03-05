@@ -86,6 +86,7 @@ Nous étudions d'abord un modèle LLM brut, dont l'identifiant modèle est : `Qw
 
    torch_dtype=torch.float32 :
      précise le type numérique utilisé pour les calculs (32 bits flottants).
+4.
 
 5. Quand je change le paramètre température la réponse du modèle change, si je mets 2 par
    exemple il ajoute des mots très aléatoirement, alors que si je mets 0.1 il répète la
@@ -93,3 +94,5 @@ Nous étudions d'abord un modèle LLM brut, dont l'identifiant modèle est : `Qw
    
    Concrètement, ce paramètre change le niveau de risque que va prendre l'IA lorsqu'il
    décide du prochain token. (0 à 2 ou du moins risqué au plus).
+
+6. Il répond exactement la même chose à chaque fois.
