@@ -17,26 +17,27 @@ Nous étudions d'abord un modèle LLM brut, dont l'identifiant modèle est : `Qw
 
 1. L’identifiant suit la convention des modèles publiés sur la plateforme Hugging Face.
 
-  Qwen
-  → C’est le nom de l’organisation qui publie le modèle.
+  Qwen :
+  C’est le nom de l’organisation qui publie le modèle.
   Il s’agit de l’équipe de recherche de Alibaba Cloud, qui développe la famille de
   modèles Qwen.
 
-  Qwen3
-  → Indique la version majeure de la famille de modèles.
+  Qwen3 :
+  Indique la version majeure de la famille de modèles.
   Ici, c’est la troisième génération des modèles Qwen, avec des améliorations
   architecturales et d’entraînement par rapport aux versions précédentes.
 
-  0.6B
-  → Signifie 0.6 billion, donc 600 millions de paramètres.
+  0.6B :
+  Signifie 0.6 billion, donc 600 millions de paramètres.
   C’est la taille du modèle.
 
-  Base
-  → Indique que c’est la version pré-entraînée brute (non fine-tunée pour le dialogue ou
+  Base :
+  Indique que c’est la version pré-entraînée brute (non fine-tunée pour le dialogue ou
   les instructions).
   Elle n’a pas été optimisée avec du RLHF ou des instructions conversationnelles.
 
-  Pourquoi utiliser la version 0.6B? Car elle est beaucoup plus légère qu'une version 7B    ou 14B par exemple, ce qui permet de faire tourner ce modèle rapidement sur des
+  Pourquoi utiliser la version 0.6B? Car elle est beaucoup plus légère qu'une version 7B
+  ou 14B par exemple, ce qui permet de faire tourner ce modèle rapidement sur des
   ordinateurs pas très puissants.
 
 2. On crée une fonction avec pipeline() nommée gen, à laquelle on peut passer du texte et
@@ -85,3 +86,10 @@ Nous étudions d'abord un modèle LLM brut, dont l'identifiant modèle est : `Qw
 
    torch_dtype=torch.float32 :
      précise le type numérique utilisé pour les calculs (32 bits flottants).
+
+5. Quand je change le paramètre température la réponse du modèle change, si je mets 2 par
+   exemple il ajoute des mots très aléatoirement, alors que si je mets 0.1 il répète la
+   même réponse beaucoup de fois.
+   
+   Concrètement, ce paramètre change le niveau de risque que va prendre l'IA lorsqu'il
+   décide du prochain token. (0 à 2 ou du moins risqué au plus).
