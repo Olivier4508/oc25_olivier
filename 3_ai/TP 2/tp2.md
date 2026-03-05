@@ -15,4 +15,22 @@ Nous étudions d'abord un modèle LLM brut, dont l'identifiant modèle est : `Qw
 
 #### Réponses :
 
-1. 
+1. L’identifiant suit la convention des modèles publiés sur la plateforme Hugging Face.
+
+Qwen
+→ C’est le nom de l’organisation qui publie le modèle.
+Il s’agit de l’équipe de recherche de Alibaba Cloud, qui développe la famille de modèles Qwen.
+
+Qwen3
+→ Indique la version majeure de la famille de modèles.
+Ici, c’est la troisième génération des modèles Qwen, avec des améliorations architecturales et d’entraînement par rapport aux versions précédentes.
+
+0.6B
+→ Signifie 0.6 billion, donc 600 millions de paramètres.
+C’est la taille du modèle.
+
+Base
+→ Indique que c’est la version pré-entraînée brute (non fine-tunée pour le dialogue ou les instructions).
+Elle n’a pas été optimisée avec du RLHF ou des instructions conversationnelles.
+
+Pourquoi utiliser la version 0.6B? Car elle est beaucoup plus légère qu'une version 7B ou 14B par exemple, ce qui permet de faire tourner ce modèle rapidement sur des ordinateurs pas très puissants.
