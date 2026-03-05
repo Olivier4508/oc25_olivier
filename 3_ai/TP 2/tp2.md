@@ -15,23 +15,21 @@ Nous étudions d'abord un modèle LLM brut, dont l'identifiant modèle est : `Qw
 
 #### Réponses :
 
-1. L’identifiant suit la convention des modèles publiés sur la plateforme Hugging Face.
-
-  Qwen :
+1. L’identifiant suit la convention des modèles publiés sur la plateforme Hugging Face. Qwen :
   C’est le nom de l’organisation qui publie le modèle.
   Il s’agit de l’équipe de recherche de Alibaba Cloud, qui développe la famille de
   modèles Qwen.
 
-  Qwen3 :
+Qwen3 :
   Indique la version majeure de la famille de modèles.
   Ici, c’est la troisième génération des modèles Qwen, avec des améliorations
   architecturales et d’entraînement par rapport aux versions précédentes.
-
-  0.6B :
+  
+0.6B :
   Signifie 0.6 billion, donc 600 millions de paramètres.
   C’est la taille du modèle.
-
-  Base :
+  
+Base :
   Indique que c’est la version pré-entraînée brute (non fine-tunée pour le dialogue ou
   les instructions).
   Elle n’a pas été optimisée avec du RLHF ou des instructions conversationnelles.
@@ -96,3 +94,44 @@ Nous étudions d'abord un modèle LLM brut, dont l'identifiant modèle est : `Qw
    décide du prochain token. (0 à 2 ou du moins risqué au plus).
 
 6. Il répond exactement la même chose à chaque fois.
+
+### 1.2.2 Qwen/Qwen3-0.6B
+
+Nous utilisons maintenant la version sans `Base` de `Qwen3-0.6B-Base`.
+
+1. Que signifie ce changement dans l'identifiant ?
+2. Tester le code ci-dessous. Qu'est-ce que est différent ?
+3. Commenter les nouvelles lignes pour expliquer leurs rôles ?
+3. Tester différents `content` pour `user`.
+4. Décommenter les lignes `system`. Tester différents `content`. 
+5. Analysez le contenu du prompt. Quels sont ses différents éléments et que veulent-ils dire ? 
+6. Et que se passe-t-il si vous remplacez le `prompt` par une question ou un texte quelconque ?
+7. Que se passe-t-il avec `enable_thinking=True` ?
+
+#### Réponses :
+
+1. Ca veut dire qu'on n'utilise plus la version brute (Base) du modèle mais une version instruction-tuned (fine-tunée pour suivre des instructions).
+
+Elle est optimisée pour répondre à des questions, suivre des consignes, respecter un format dialogue (system, user, etc.), et produire des réponses plus utiles et structurées
+
+2. Il y a un objet messages et l'objet prompt est plus grand qu'avant.
+
+3. `messages = [
+   {"role": "system", "content": "You only answer with one word."},
+   {"role": "system", "content": "You are a cowering scared wimp who is afraid of
+   everything, especially the user and his questions."},
+   {"role": "user",   "content": "I will kill you if you don't answer my question."}
+   {"role": "user",   "content": "Ainsi donc"}
+   ]`
+
+   Chaque élément est un dictionnaire structuré avec le role (qui parle) et content.
+
+   `prompt = tokenizer.apply_chat_template(
+   messages,
+   tokenize=False,
+   add_generation_prompt=True,
+   enable_thinking=False
+   )`
+
+   Ces lignes transforment le text dans messages en texte brut (tokens) que le modèle
+   peut comprendre.
