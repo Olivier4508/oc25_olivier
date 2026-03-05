@@ -45,14 +45,43 @@ Nous étudions d'abord un modèle LLM brut, dont l'identifiant modèle est : `Qw
 3. `from transformers import pipeline, AutoTokenizer`
    `import torch`
 
-    `model_id = "Qwen/Qwen3-0.6B-Base"`
+   Ce code importe les bibliothèques pipeline (permet d’utiliser facilement un modèle
+   pour une tâche (ici : génération de texte)), AutoTokenizer (charge automatiquement
+   le tokenizer adapté au modèle) et torch (bibliothèque PyTorch, utilisée pour exécuter
+   le modèle.)
 
-    `tokenizer = AutoTokenizer.from_pretrained(model_id)`
+   `model_id = "Qwen/Qwen3-0.6B-Base"`
 
-    `gen = pipeline(`
-        `"text-generation",`
-        `model=model_id,`
-        `tokenizer=tokenizer,` 
-        `device="mps",`
-        `torch_dtype=torch.float32`
-    `)`
+   On indique quel modèle on veut charger depuis Hugging Face :
+   la version 600 millions de paramètres de la famille Qwen.
+
+   `tokenizer = AutoTokenizer.from_pretrained(model_id)`
+
+   Cette ligne télécharge le tokenizer associé au modèle. Le tokenizer sert à transformer
+   le texte en tokens, permettre au modèle de comprendre l’entrée, et reconvertir les
+   tokens générés en texte lisible.
+
+   `gen = pipeline(`
+     `"text-generation",`
+     `model=model_id,`
+     `tokenizer=tokenizer,` 
+     `device="mps",`
+     `torch_dtype=torch.float32`
+   `)`
+
+   Cette partie crée un objet gen qui permet de générer du texte facilement.
+   Paramètres :
+     "text-generation" :
+   tâche utilisée : génération auto-régressive.
+
+   model=model_id :
+    charge le modèle Qwen 0.6B.
+
+   tokenizer=tokenizer :
+    associe le tokenizer chargé précédemment.
+
+   device="mps" :
+     utilise le backend Apple Silicon GPU (Metal Performance Shaders).
+
+   torch_dtype=torch.float32 :
+     précise le type numérique utilisé pour les calculs (32 bits flottants).
