@@ -135,3 +135,9 @@ Elle est optimisée pour répondre à des questions, suivre des consignes, respe
 
    Ces lignes transforment le text dans messages en texte brut (tokens) que le modèle
    peut comprendre.
+
+4.
+5.
+6.
+7.
+8. Il prend plus de temps pour répondre mais elles sont meilleures, car il pense.
