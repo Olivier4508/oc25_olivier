@@ -1,0 +1,1 @@
+Because Grok and Claude have the exact same answers to each question, I'll assume that they're correct and ChatGPT is wrong. I also asked the same prompt to ChatGPT twice in a row in the same chat and the answers changed each time. This little experiment shows that on these questions OpenAI has fallen behind Anthropic and XAI, at least in terms of their public and free models.
