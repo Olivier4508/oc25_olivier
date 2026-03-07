@@ -1,0 +1,42 @@
+## Question :
+
+Il existent de nombreux autres benchmarks. 
+
+1. Faites une recherche pour en trouver 2 ou 3, les plus variés possibles. Vous pouvez essayer de trouver des benchmarks qui testent des sujets qui vous intéressent (science, programmation, mathématiques, écriture de fiction, etc.).
+2. Créer un petit tableau avec des informations générales sur les benchmarks.
+3. Quelles compétences des IA mesurent vos benchmarks ?
+4. Trouver quelques questions et regardez les réponses des modèles locaux, ainsi que ceux des grands modèles. Quelles sont vos impressions ?
+5. Cherchez les résultats des modèles sur vos benchmarks sur des sites de références. Comment ont évolué les scores des meilleurs modèles depuis la publication du benchmark.
+
+## Benchmarks choisies :
+
+1. Astronomers are studying a star with a Teff of approximately 6000 K. They are interested in spectroscopically determining
+the surface gravity of the star using spectral lines (EW < 100 mA) of two chemical elements, El1 and El2. Given the
+atmospheric temperature of the star, El1 is mostly in the neutral phase, while El2 is mostly ionized. Which lines are the
+most sensitive to surface gravity for the astronomers to consider?
+A) El2 I (neutral)
+B) El1 II (singly ionized)
+C) El2 II (singly ionized)
+D) El1 I (neutral)
+Quantum Mechanics
+
+2. Methylcyclopentadiene (which exists as a fluxional mixture of isomers) was allowed to react with methyl isoamyl ketone
+and a catalytic amount of pyrrolidine. A bright yellow, cross-conjugated polyalkenyl hydrocarbon product formed (as
+a mixture of isomers), with water as a side product. These products are derivatives of fulvene. This product was then
+allowed to react with ethyl acrylate in a 1:1 ratio. Upon completion of the reaction, the bright yellow color had disappeared.
+How many chemically distinct isomers make up the final product (not counting stereoisomers)?
+A) 2
+B) 16
+C) 8
+D) 4
+
+3. A scientist studies the stress response of barley to increased temperatures and finds a protein which contributes to heat
+tolerance through the stabilisation of cell membrane. The scientist is very happy and wants to create a heat-tolerant cultivar
+of diploid wheat. Using databases, they find a heat tolerance protein homologue and start analysing its accumulation under
+heat stress. Soon enough, the scientist discovers this protein is not synthesised in the wheat cultivar they study. There are
+many possible reasons for such behaviour, including:
+A) A miRNA targets the protein, which makes exonucleases cut it immediately after the end of translation and before
+processing in ER
+B) Trimethylation of lysine of H3 histone in position 27 at the promoter of the gene encoding the target protein
+C) A stop-codon occurs in the 5’-UTR region of the gene encoding the target protein
+D) The proteolysis process disrupts a quaternary structure of the protein, preserving only a tertiary structure
