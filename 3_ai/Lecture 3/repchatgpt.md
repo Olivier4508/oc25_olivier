@@ -1,7 +1,7 @@
 ## Réponse :
 
 1. Astronomy (surface gravity from spectral lines)
-2. 
+
 Correct answer: A) El2 I (neutral)
 
 Explanation:
